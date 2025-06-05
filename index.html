@@ -6,10 +6,11 @@
     <title>Efe Eryiğit | Portfolio</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         /* Base Colors */
         :root {
-            --vibrant-emerald: #2ECC71; /* Daha Canlı Zümrüt Yeşili (Örnek) */
+            --vibrant-emerald: #2ECC71; /* Daha Canlı Zümrüt Yeşili */
             --charcoal-black: #1C1C1C; /* Kömür Siyahı */
             --ash-gray: #B0B0B0;       /* Gri Tonu (Yazılar/İkonlar) */
             --light-gray-bg: #2a2a2a;  /* Kartlar ve bazı bölüm arkaplanları için biraz daha açık kömür */
@@ -34,7 +35,7 @@
             display: block;
             width: 60px;
             height: 3px;
-            background-color: var(--vibrant-emerald); /* YENİ VURGU RENGİ */
+            background-color: var(--vibrant-emerald); 
             margin-top: 8px;
             border-radius: 2px;
         }
@@ -42,14 +43,14 @@
             transition: color 0.3s ease;
         }
         nav a:hover {
-            color: var(--vibrant-emerald); /* YENİ VURGU RENGİ */
+            color: var(--vibrant-emerald); 
         }
-        .experience-card {
+        .experience-card, .hobby-card { 
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
-        .experience-card:hover {
+        .experience-card:hover, .hobby-card:hover { 
             transform: translateY(-5px);
-            box-shadow: 0 10px 15px -3px rgba(46, 204, 113, 0.2), 0 4px 6px -2px rgba(46, 204, 113, 0.1); /* Yeni canlı yeşil tonlarında gölge */
+            box-shadow: 0 10px 15px -3px rgba(46, 204, 113, 0.2), 0 4px 6px -2px rgba(46, 204, 113, 0.1); 
         }
         .hero-bg {
              background-color: #111111; 
@@ -58,15 +59,25 @@
             background-color: var(--light-gray-bg); 
         }
         .text-accent {
-            color: var(--vibrant-emerald); /* YENİ VURGU RENGİ */
+            color: var(--vibrant-emerald); 
         }
-        .button-accent { 
-            background-color: var(--vibrant-emerald); /* YENİ VURGU RENGİ */
-            color: var(--charcoal-black); /* Canlı yeşil buton üzerinde koyu yazı daha iyi okunabilir */
-            transition: background-color 0.3s ease;
+        .button-cv { /* CV butonu için özel stil */
+            background-color: var(--vibrant-emerald);
+            color: var(--charcoal-black);
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+            text-decoration: none;
         }
-        .button-accent:hover {
-            background-color: #27AE60; /* Yeni canlı yeşilin biraz daha koyu tonu */
+        .button-cv:hover {
+            background-color: #27AE60; /* Zümrüt yeşilinin biraz daha koyu tonu */
+            transform: translateY(-2px);
+        }
+        .button-cv i {
+            margin-right: 0.5rem;
         }
         .modal-backdrop-color {
             background-color: rgba(0, 0, 0, 0.85); 
@@ -89,16 +100,16 @@
             background: #909090;
         }
 
-        /* Tailwind Direktifleri ile Renk Uygulamaları (CSS Değişkenlerini Kullanarak) */
+        /* Tailwind Direktifleri ile Renk Uygulamaları */
         .bg-primary { background-color: var(--charcoal-black); }
         .bg-secondary { background-color: var(--light-gray-bg); }
-        .bg-hero { background-color: #111111; } /* Hero için özel koyu */
+        .bg-hero { background-color: #111111; } 
         .text-primary-light { color: var(--text-light); }
         .text-secondary-medium { color: var(--text-medium); }
-        .text-highlight-accent { color: var(--vibrant-emerald); } /* YENİ VURGU RENGİ */
-        .border-highlight-accent { border-color: var(--vibrant-emerald); } /* YENİ VURGU RENGİ */
-        .hover-text-highlight-accent:hover { color: var(--vibrant-emerald); } /* YENİ VURGU RENGİ */
-        .shadow-custom-accent { box-shadow: 0 10px 15px -3px rgba(46, 204, 113, 0.1), 0 4px 6px -2px rgba(46, 204, 113, 0.05); } /* Yeni canlı yeşil tonlarında gölge */
+        .text-highlight-accent { color: var(--vibrant-emerald); } 
+        .border-highlight-accent { border-color: var(--vibrant-emerald); } 
+        .hover-text-highlight-accent:hover { color: var(--vibrant-emerald); } 
+        .shadow-custom-accent { box-shadow: 0 10px 15px -3px rgba(46, 204, 113, 0.1), 0 4px 6px -2px rgba(46, 204, 113, 0.05); } 
 
     </style>
 </head>
@@ -114,6 +125,7 @@
                 <a href="#skills" class="text-secondary-medium hover-text-highlight-accent">Skills</a>
                 <a href="#education" class="text-secondary-medium hover-text-highlight-accent">Education</a>
                 <a href="#extracurricular" class="text-secondary-medium hover-text-highlight-accent">Activities</a>
+                <a href="#hobbies" class="text-secondary-medium hover-text-highlight-accent">Hobbies</a> 
                 <a href="#contact" class="text-secondary-medium hover-text-highlight-accent">Contact</a>
             </div>
             <div class="md:hidden">
@@ -131,6 +143,7 @@
             <a href="#skills" class="block px-6 py-3 text-secondary-medium hover:bg-primary hover-text-highlight-accent">Skills</a>
             <a href="#education" class="block px-6 py-3 text-secondary-medium hover:bg-primary hover-text-highlight-accent">Education</a>
             <a href="#extracurricular" class="block px-6 py-3 text-secondary-medium hover:bg-primary hover-text-highlight-accent">Activities</a>
+            <a href="#hobbies" class="block px-6 py-3 text-secondary-medium hover:bg-primary hover-text-highlight-accent">Hobbies</a> 
             <a href="#contact" class="block px-6 py-3 text-secondary-medium hover:bg-primary hover-text-highlight-accent">Contact</a>
         </div>
     </nav>
@@ -152,9 +165,15 @@
     <section id="about" class="py-16 md:py-24 bg-secondary">
         <div class="container mx-auto px-6">
             <h2 class="text-3xl font-bold mb-2 text-center section-title mx-auto text-primary-light">About Me</h2>
-            <p class="text-center text-secondary-medium mb-12 max-w-3xl mx-auto text-lg leading-relaxed">
+            <p class="text-center text-secondary-medium mb-10 max-w-3xl mx-auto text-lg leading-relaxed">
                 I am a 4th-year Management Information Systems student at Özyeğin University. I am passionate about technology, digital marketing, and business development. My interest in the start-up ecosystem drives me to constantly pursue innovation and actively contribute to digital transformation processes. I am a team player, eager to learn, and have a solution-oriented mindset.
             </p>
+            <!-- CV Butonu Güncellendi -->
+            <div class="text-center">
+                <a href="assets/Efe_Eryigit_CV_4th.pdf" download="Efe_Eryigit_CV_4th.pdf" class="button-cv">
+                    <i class="fas fa-download"></i>Download CV
+                </a>
+            </div>
         </div>
     </section>
 
@@ -163,55 +182,42 @@
         <div class="container mx-auto px-6">
             <h2 class="text-3xl font-bold mb-12 text-center section-title mx-auto text-primary-light">Experience</h2>
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Experience Card: OzU Business Club -->
                 <div class="experience-card bg-secondary p-6 rounded-lg shadow-custom-accent cursor-pointer" data-modal-target="ozuBusinessModal">
                     <h3 class="text-xl font-semibold text-highlight-accent">President</h3>
                     <p class="text-primary-light">Ozyegin Business Club - Istanbul, TURKEY</p>
                     <p class="text-sm text-secondary-medium">06/2024 - Present</p>
                     <p class="mt-3 text-sm text-highlight-accent hover:opacity-80">Click for details & photos &rarr;</p> 
                 </div>
-
-                <!-- Experience Card: Evyap -->
                 <div class="experience-card bg-secondary p-6 rounded-lg shadow-custom-accent cursor-pointer" data-modal-target="evyapModal">
                     <h3 class="text-xl font-semibold text-highlight-accent">Digital Marketing Intern</h3>
                     <p class="text-primary-light">EVYAP SABUN A.Ş. - Istanbul, TURKEY</p>
                     <p class="text-sm text-secondary-medium">02/2025 - Present</p>
                     <p class="mt-3 text-sm text-highlight-accent hover:opacity-80">Click for details &rarr;</p>
                 </div>
-                
-                <!-- Experience Card: Viralight App -->
                 <div class="experience-card bg-secondary p-6 rounded-lg shadow-custom-accent cursor-pointer" data-modal-target="viralightModal">
                     <h3 class="text-xl font-semibold text-highlight-accent">Co-Founder</h3>
                     <p class="text-primary-light">Viralight App - Istanbul, TURKEY</p>
                     <p class="text-sm text-secondary-medium">02/2025 - 04/2025</p>
                     <p class="mt-3 text-sm text-highlight-accent hover:opacity-80">Click for details &rarr;</p>
                 </div>
-
-                <!-- Experience Card: Fridge Buddy App -->
                 <div class="experience-card bg-secondary p-6 rounded-lg shadow-custom-accent cursor-pointer" data-modal-target="fridgeBuddyModal">
                     <h3 class="text-xl font-semibold text-highlight-accent">Co-Founder</h3>
                     <p class="text-primary-light">Fridge Buddy App – Istanbul, TURKEY</p>
                     <p class="text-sm text-secondary-medium">01/2025 – 02/2025</p>
                     <p class="mt-3 text-sm text-highlight-accent hover:opacity-80">Click for details &rarr;</p>
                 </div>
-                
-                <!-- Experience Card: Zarastro Art -->
                 <div class="experience-card bg-secondary p-6 rounded-lg shadow-custom-accent cursor-pointer" data-modal-target="zarastroModal">
                     <h3 class="text-xl font-semibold text-highlight-accent">Volunteer Intern, Marketing, Sales</h3>
                     <p class="text-primary-light">ZARASTRO ART - Istanbul, TURKEY</p>
                     <p class="text-sm text-secondary-medium">08/2023 - 10/2023</p>
                     <p class="mt-3 text-sm text-highlight-accent hover:opacity-80">Click for details &rarr;</p>
                 </div>
-
-                <!-- Experience Card: Asyalogic -->
                 <div class="experience-card bg-secondary p-6 rounded-lg shadow-custom-accent cursor-pointer" data-modal-target="asyalogicModal">
                     <h3 class="text-xl font-semibold text-highlight-accent">Part-Time Data Entry Operator</h3>
                     <p class="text-primary-light">ASYALOGIC - Istanbul, TURKEY</p>
                     <p class="text-sm text-secondary-medium">11/2022 - 12/2022</p>
                     <p class="mt-3 text-sm text-highlight-accent hover:opacity-80">Click for details &rarr;</p>
                 </div>
-                
-                <!-- Experience Card: Doger Kimya -->
                 <div class="experience-card bg-secondary p-6 rounded-lg shadow-custom-accent cursor-pointer" data-modal-target="dogerKimyaModal">
                     <h3 class="text-xl font-semibold text-highlight-accent">Volunteer Intern</h3>
                     <p class="text-primary-light">DOGER KIMYA TARIM LTD. STI. - Konya, TURKEY</p>
@@ -224,7 +230,7 @@
 
     <!-- Skills Section -->
     <section id="skills" class="py-16 md:py-24 bg-secondary">
-        <div class="container mx-auto px-6">
+         <div class="container mx-auto px-6">
             <h2 class="text-3xl font-bold mb-12 text-center section-title mx-auto text-primary-light">Skills & Certificates</h2>
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <div class="card-bg p-6 rounded-lg shadow-custom-accent">
@@ -298,9 +304,57 @@
         </div>
     </section>
 
+    <!-- Hobbies Section (Başlık ve Basketbol Güncellendi) -->
+    <section id="hobbies" class="py-16 md:py-24 bg-primary">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold mb-12 text-center section-title mx-auto text-primary-light">Personal Hobbies & Interests</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Hobby Card: Basketball -->
+                <div class="hobby-card bg-secondary p-6 rounded-lg shadow-custom-accent">
+                    <h3 class="text-xl font-semibold text-highlight-accent mb-2">Basketball</h3>
+                    <p class="text-secondary-medium text-sm mb-1">7 years as a licensed player.</p>
+                    <p class="text-primary-light"><strong>Teams:</strong> Selçuklu Belediye Spor (5 years), Ayyıldız (Konya Tofaş Youth Academy, 2 years).</p>
+                </div>
+
+                <!-- Hobby Card: Outdoor Sports -->
+                <div class="hobby-card bg-secondary p-6 rounded-lg shadow-custom-accent">
+                    <h3 class="text-xl font-semibold text-highlight-accent mb-2">Outdoor Sports</h3>
+                     <p class="text-secondary-medium text-sm mb-1">Beginner level, pursued recreationally for the past 2 years.</p>
+                    <ul class="list-disc list-inside text-primary-light ml-4">
+                        <li>Camping</li>
+                        <li>Wakeboarding</li>
+                        <li>Snowboarding</li>
+                    </ul>
+                </div>
+
+                <!-- Hobby Card: Music -->
+                <div class="hobby-card bg-secondary p-6 rounded-lg shadow-custom-accent">
+                    <h3 class="text-xl font-semibold text-highlight-accent mb-2">Music</h3>
+                    <p class="text-secondary-medium text-sm mb-1">Songwriting (Lyrics)</p>
+                    <p class="text-primary-light">3 home-recorded demo tracks available on SoundCloud.</p>
+                    <p class="mt-2">
+                        <a href="https://soundcloud.com/efe-eryi-it-ii" target="_blank" rel="noopener noreferrer" class="text-highlight-accent hover:underline font-medium text-sm">
+                            Listen on SoundCloud &rarr;
+                        </a>
+                    </p>
+                </div>
+                
+                <!-- Hobby Card: Other Interests -->
+                <div class="hobby-card bg-secondary p-6 rounded-lg shadow-custom-accent md:col-span-2 lg:col-span-3"> 
+                    <h3 class="text-xl font-semibold text-highlight-accent mb-2">Other Interests</h3>
+                    <ul class="list-disc list-inside text-primary-light ml-4 space-y-1">
+                        <li>Exploring new technologies and digital trends.</li>
+                        <li>Following Rap Music culture and new releases.</li>
+                        <li>Keeping up with Streetwear Fashion newsletters and styles.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Contact Section -->
     <section id="contact" class="py-16 md:py-24 bg-primary">
-        <div class="container mx-auto px-6 text-center">
+         <div class="container mx-auto px-6 text-center">
             <h2 class="text-3xl font-bold mb-12 section-title mx-auto text-primary-light">Contact</h2>
             <p class="text-secondary-medium mb-2 text-lg">Feel free to reach out!</p>
             <p class="text-xl text-highlight-accent font-medium mb-1">
@@ -325,7 +379,6 @@
     </footer>
 
     <!-- Modals -->
-    <!-- OzU Business Club Modal -->
     <div id="ozuBusinessModal" class="modal fixed inset-0 modal-backdrop-color flex items-center justify-center p-4 opacity-0 invisible z-[100]">
         <div class="modal-content modal-content-bg p-6 md:p-8 rounded-lg shadow-xl w-full max-w-3xl max-h-[90vh] overflow-y-auto transform scale-95">
             <div class="flex justify-between items-center mb-6">
@@ -342,7 +395,6 @@
                             <img src="images/efe_eryigit_marketing_week.jpg" alt="Marketing MUWEEK Etkinliği" class="gallery-image w-full flex-shrink-0 object-contain max-h-[50vh] rounded-lg">
                             <img src="images/efeeryigit_hiq_etkinlik.jpg" alt="HIQ Talks Etkinliği" class="gallery-image w-full flex-shrink-0 object-contain max-h-[50vh] rounded-lg">
                             <img src="images/efe_eryigit_kadınlargünü_etkinlik_fotoğraf.jpg" alt="She Means Business - Kadınlar Günü Etkinliği" class="gallery-image w-full flex-shrink-0 object-contain max-h-[50vh] rounded-lg">
-                            <!-- İsteğe bağlı ek fotoğraflar buraya eklenebilir -->
                              <img src="images/efe_eryigit_ozubusiness_borsa101.jpg" alt="OzU Business Club Borsa 101 Etkinliği" class="gallery-image w-full flex-shrink-0 object-contain max-h-[50vh] rounded-lg">
                              <img src="images/efe_eryigit_yga_etkinlik_fotoğraf.jpg" alt="OzU Business Club YGA Etkinliği" class="gallery-image w-full flex-shrink-0 object-contain max-h-[50vh] rounded-lg">
                         </div>
@@ -365,7 +417,6 @@
         </div>
     </div>
 
-    <!-- Evyap Modal -->
     <div id="evyapModal" class="modal fixed inset-0 modal-backdrop-color flex items-center justify-center p-4 opacity-0 invisible z-[100]">
         <div class="modal-content modal-content-bg p-6 md:p-8 rounded-lg shadow-xl w-full max-w-2xl max-h-[90vh] overflow-y-auto transform scale-95">
             <div class="flex justify-between items-center mb-6">
@@ -385,8 +436,6 @@
             </div>
         </div>
     </div>
-
-    <!-- Viralight App Modal -->
     <div id="viralightModal" class="modal fixed inset-0 modal-backdrop-color flex items-center justify-center p-4 opacity-0 invisible z-[100]">
         <div class="modal-content modal-content-bg p-6 md:p-8 rounded-lg shadow-xl w-full max-w-2xl max-h-[90vh] overflow-y-auto transform scale-95">
             <div class="flex justify-between items-center mb-6">
@@ -409,8 +458,6 @@
             </div>
         </div>
     </div>
-
-    <!-- Fridge Buddy App Modal -->
     <div id="fridgeBuddyModal" class="modal fixed inset-0 modal-backdrop-color flex items-center justify-center p-4 opacity-0 invisible z-[100]">
         <div class="modal-content modal-content-bg p-6 md:p-8 rounded-lg shadow-xl w-full max-w-2xl max-h-[90vh] overflow-y-auto transform scale-95">
             <div class="flex justify-between items-center mb-6">
@@ -433,8 +480,6 @@
             </div>
         </div>
     </div>
-    
-    <!-- Zarastro Art Modal -->
     <div id="zarastroModal" class="modal fixed inset-0 modal-backdrop-color flex items-center justify-center p-4 opacity-0 invisible z-[100]">
         <div class="modal-content modal-content-bg p-6 md:p-8 rounded-lg shadow-xl w-full max-w-2xl max-h-[90vh] overflow-y-auto transform scale-95">
             <div class="flex justify-between items-center mb-6">
@@ -452,8 +497,6 @@
             </div>
         </div>
     </div>
-
-    <!-- Asyalogic Modal -->
     <div id="asyalogicModal" class="modal fixed inset-0 modal-backdrop-color flex items-center justify-center p-4 opacity-0 invisible z-[100]">
         <div class="modal-content modal-content-bg p-6 md:p-8 rounded-lg shadow-xl w-full max-w-2xl max-h-[90vh] overflow-y-auto transform scale-95">
             <div class="flex justify-between items-center mb-6">
@@ -470,8 +513,6 @@
             </div>
         </div>
     </div>
-    
-    <!-- Doger Kimya Modal -->
     <div id="dogerKimyaModal" class="modal fixed inset-0 modal-backdrop-color flex items-center justify-center p-4 opacity-0 invisible z-[100]">
         <div class="modal-content modal-content-bg p-6 md:p-8 rounded-lg shadow-xl w-full max-w-2xl max-h-[90vh] overflow-y-auto transform scale-95">
             <div class="flex justify-between items-center mb-6">
@@ -488,7 +529,6 @@
             </div>
         </div>
     </div>
-
 
     <script>
         // Navigation Toggle for Mobile
@@ -513,7 +553,6 @@
                 const modal = document.getElementById(modalId);
                 if (modal) {
                     openModal(modal);
-                    // Initialize gallery if this modal is the OzU Business Club modal
                     if (modalId === 'ozuBusinessModal') {
                         initializeGallery(modal.querySelector('#galleryContainerOzu'), modal.querySelector('#gallerySliderOzu'), modal.querySelectorAll('.gallery-image'), modal.querySelector('.gallery-prev'), modal.querySelector('.gallery-next'), modal.querySelector('.gallery-dots'));
                     }
@@ -531,7 +570,6 @@
             });
         });
 
-        // Close modal when clicking on the backdrop
         const allModals = document.querySelectorAll('.modal');
         allModals.forEach(modal => {
             modal.addEventListener('click', (event) => {
@@ -564,58 +602,47 @@
             }
         }
         
-        // Generic Gallery Initializer
         function initializeGallery(container, slider, images, prevBtn, nextBtn, dotsContainer) {
             if (!slider || !images || images.length === 0 || !prevBtn || !nextBtn || !dotsContainer) {
-                // console.warn('Gallery elements not found for:', container);
                 return;
             }
-
             let currentIndex = 0;
-            dotsContainer.innerHTML = ''; // Clear existing dots
-
+            dotsContainer.innerHTML = ''; 
             function updateGallery() {
                 slider.style.transform = `translateX(-${currentIndex * 100}%)`;
                 const dots = dotsContainer.querySelectorAll('.dot');
                 dots.forEach((dot, index) => {
-                    dot.classList.toggle('bg-white', index === currentIndex); // Aktif dot beyaz
-                    dot.classList.toggle('bg-gray-500', index !== currentIndex); // Pasif dotlar gri
+                    dot.classList.toggle('bg-white', index === currentIndex); 
+                    dot.classList.toggle('bg-gray-500', index !== currentIndex); 
                 });
             }
-            
             images.forEach((_, index) => {
                 const dot = document.createElement('button');
                 dot.classList.add('dot', 'w-2.5', 'h-2.5', 'rounded-full', 'transition-colors', 'duration-300');
                 dot.classList.toggle('bg-white', index === 0);
-                dot.classList.toggle('bg-gray-500', index !== 0); // Yeni tema için slate-500 yerine gray-500
+                dot.classList.toggle('bg-gray-500', index !== 0); 
                 dot.addEventListener('click', () => {
                     currentIndex = index;
                     updateGallery();
                 });
                 dotsContainer.appendChild(dot);
             });
-
             prevBtn.addEventListener('click', () => {
                 currentIndex = (currentIndex - 1 + images.length) % images.length;
                 updateGallery();
             });
-
             nextBtn.addEventListener('click', () => {
                 currentIndex = (currentIndex + 1) % images.length;
                 updateGallery();
             });
-            
-            updateGallery(); // Initial setup
+            updateGallery(); 
         }
 
-
-        // Set current year in footer
         const currentYearSpan = document.getElementById('currentYear');
         if (currentYearSpan) {
             currentYearSpan.textContent = new Date().getFullYear();
         }
 
-        // Smooth scrolling for nav links
         document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -625,7 +652,6 @@
                     const navbarHeight = document.querySelector('nav').offsetHeight;
                     const elementPosition = targetElement.getBoundingClientRect().top;
                     const offsetPosition = elementPosition + window.pageYOffset - navbarHeight;
-                
                     window.scrollTo({
                         top: offsetPosition,
                         behavior: 'smooth'
@@ -633,7 +659,7 @@
                 }
             });
         });
-
     </script>
 </body>
-</ht
+</html>
+
