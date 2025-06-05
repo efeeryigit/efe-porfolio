@@ -9,7 +9,7 @@
     <style>
         /* Base Colors */
         :root {
-            --emerald-green: #046307; /* Zümrüt Yeşili */
+            --vibrant-emerald: #2ECC71; /* Daha Canlı Zümrüt Yeşili (Örnek) */
             --charcoal-black: #1C1C1C; /* Kömür Siyahı */
             --ash-gray: #B0B0B0;       /* Gri Tonu (Yazılar/İkonlar) */
             --light-gray-bg: #2a2a2a;  /* Kartlar ve bazı bölüm arkaplanları için biraz daha açık kömür */
@@ -20,8 +20,8 @@
         body {
             font-family: 'Inter', sans-serif;
             scroll-behavior: smooth;
-            background-color: var(--charcoal-black); /* Ana Arkaplan: Kömür Siyahı */
-            color: var(--text-light);               /* Ana Metin Rengi */
+            background-color: var(--charcoal-black); 
+            color: var(--text-light);              
         }
         .modal {
             transition: opacity 0.3s ease, visibility 0.3s ease;
@@ -34,7 +34,7 @@
             display: block;
             width: 60px;
             height: 3px;
-            background-color: var(--emerald-green); /* Vurgu Rengi: Zümrüt Yeşili */
+            background-color: var(--vibrant-emerald); /* YENİ VURGU RENGİ */
             margin-top: 8px;
             border-radius: 2px;
         }
@@ -42,37 +42,37 @@
             transition: color 0.3s ease;
         }
         nav a:hover {
-            color: var(--emerald-green); /* Vurgu Rengi: Zümrüt Yeşili */
+            color: var(--vibrant-emerald); /* YENİ VURGU RENGİ */
         }
         .experience-card {
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
         .experience-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 15px -3px rgba(4, 99, 7, 0.2), 0 4px 6px -2px rgba(4, 99, 7, 0.1); /* Zümrüt yeşili tonlarında gölge */
+            box-shadow: 0 10px 15px -3px rgba(46, 204, 113, 0.2), 0 4px 6px -2px rgba(46, 204, 113, 0.1); /* Yeni canlı yeşil tonlarında gölge */
         }
         .hero-bg {
-             background-color: #111111; /* Hero için daha da koyu siyah */
+             background-color: #111111; 
         }
         .card-bg {
-            background-color: var(--light-gray-bg); /* Kart Arkaplanı */
+            background-color: var(--light-gray-bg); 
         }
         .text-accent {
-            color: var(--emerald-green); /* Vurgu Metin Rengi: Zümrüt Yeşili */
+            color: var(--vibrant-emerald); /* YENİ VURGU RENGİ */
         }
-        .button-accent { /* Bu sınıfı istersen butonlara ekleyebilirsin */
-            background-color: var(--emerald-green);
-            color: var(--text-light); /* Zümrüt yeşili buton üzerinde açık renk yazı */
+        .button-accent { 
+            background-color: var(--vibrant-emerald); /* YENİ VURGU RENGİ */
+            color: var(--charcoal-black); /* Canlı yeşil buton üzerinde koyu yazı daha iyi okunabilir */
             transition: background-color 0.3s ease;
         }
         .button-accent:hover {
-            background-color: #035006; /* Zümrüt yeşilinin biraz daha koyu tonu */
+            background-color: #27AE60; /* Yeni canlı yeşilin biraz daha koyu tonu */
         }
         .modal-backdrop-color {
-            background-color: rgba(0, 0, 0, 0.85); /* Modal arkaplan karartması daha yoğun */
+            background-color: rgba(0, 0, 0, 0.85); 
         }
         .modal-content-bg {
-             background-color: var(--light-gray-bg); /* Modal İçerik Arkaplanı */
+             background-color: var(--light-gray-bg); 
         }
         .gallery-scroll::-webkit-scrollbar {
             height: 8px;
@@ -89,17 +89,16 @@
             background: #909090;
         }
 
-        /* Tailwind Direktifleri ile Renk Uygulamaları */
+        /* Tailwind Direktifleri ile Renk Uygulamaları (CSS Değişkenlerini Kullanarak) */
         .bg-primary { background-color: var(--charcoal-black); }
         .bg-secondary { background-color: var(--light-gray-bg); }
-        .bg-hero { background-color: #111111; }
+        .bg-hero { background-color: #111111; } /* Hero için özel koyu */
         .text-primary-light { color: var(--text-light); }
         .text-secondary-medium { color: var(--text-medium); }
-        .text-highlight-accent { color: var(--emerald-green); }
-        .border-highlight-accent { border-color: var(--emerald-green); }
-        .hover-text-highlight-accent:hover { color: var(--emerald-green); }
-        .shadow-custom-accent { box-shadow: 0 10px 15px -3px rgba(4, 99, 7, 0.1), 0 4px 6px -2px rgba(4, 99, 7, 0.05); }
-
+        .text-highlight-accent { color: var(--vibrant-emerald); } /* YENİ VURGU RENGİ */
+        .border-highlight-accent { border-color: var(--vibrant-emerald); } /* YENİ VURGU RENGİ */
+        .hover-text-highlight-accent:hover { color: var(--vibrant-emerald); } /* YENİ VURGU RENGİ */
+        .shadow-custom-accent { box-shadow: 0 10px 15px -3px rgba(46, 204, 113, 0.1), 0 4px 6px -2px rgba(46, 204, 113, 0.05); } /* Yeni canlı yeşil tonlarında gölge */
 
     </style>
 </head>
@@ -169,7 +168,7 @@
                     <h3 class="text-xl font-semibold text-highlight-accent">President</h3>
                     <p class="text-primary-light">Ozyegin Business Club - Istanbul, TURKEY</p>
                     <p class="text-sm text-secondary-medium">06/2024 - Present</p>
-                    <p class="mt-3 text-sm text-green-400 hover:text-green-300">Click for details & photos &rarr;</p> <!-- Zümrüte yakın bir Tailwind yeşili -->
+                    <p class="mt-3 text-sm text-highlight-accent hover:opacity-80">Click for details & photos &rarr;</p> 
                 </div>
 
                 <!-- Experience Card: Evyap -->
@@ -177,7 +176,7 @@
                     <h3 class="text-xl font-semibold text-highlight-accent">Digital Marketing Intern</h3>
                     <p class="text-primary-light">EVYAP SABUN A.Ş. - Istanbul, TURKEY</p>
                     <p class="text-sm text-secondary-medium">02/2025 - Present</p>
-                    <p class="mt-3 text-sm text-green-400 hover:text-green-300">Click for details &rarr;</p>
+                    <p class="mt-3 text-sm text-highlight-accent hover:opacity-80">Click for details &rarr;</p>
                 </div>
                 
                 <!-- Experience Card: Viralight App -->
@@ -185,7 +184,7 @@
                     <h3 class="text-xl font-semibold text-highlight-accent">Co-Founder</h3>
                     <p class="text-primary-light">Viralight App - Istanbul, TURKEY</p>
                     <p class="text-sm text-secondary-medium">02/2025 - 04/2025</p>
-                    <p class="mt-3 text-sm text-green-400 hover:text-green-300">Click for details &rarr;</p>
+                    <p class="mt-3 text-sm text-highlight-accent hover:opacity-80">Click for details &rarr;</p>
                 </div>
 
                 <!-- Experience Card: Fridge Buddy App -->
@@ -193,7 +192,7 @@
                     <h3 class="text-xl font-semibold text-highlight-accent">Co-Founder</h3>
                     <p class="text-primary-light">Fridge Buddy App – Istanbul, TURKEY</p>
                     <p class="text-sm text-secondary-medium">01/2025 – 02/2025</p>
-                    <p class="mt-3 text-sm text-green-400 hover:text-green-300">Click for details &rarr;</p>
+                    <p class="mt-3 text-sm text-highlight-accent hover:opacity-80">Click for details &rarr;</p>
                 </div>
                 
                 <!-- Experience Card: Zarastro Art -->
@@ -201,7 +200,7 @@
                     <h3 class="text-xl font-semibold text-highlight-accent">Volunteer Intern, Marketing, Sales</h3>
                     <p class="text-primary-light">ZARASTRO ART - Istanbul, TURKEY</p>
                     <p class="text-sm text-secondary-medium">08/2023 - 10/2023</p>
-                    <p class="mt-3 text-sm text-green-400 hover:text-green-300">Click for details &rarr;</p>
+                    <p class="mt-3 text-sm text-highlight-accent hover:opacity-80">Click for details &rarr;</p>
                 </div>
 
                 <!-- Experience Card: Asyalogic -->
@@ -209,7 +208,7 @@
                     <h3 class="text-xl font-semibold text-highlight-accent">Part-Time Data Entry Operator</h3>
                     <p class="text-primary-light">ASYALOGIC - Istanbul, TURKEY</p>
                     <p class="text-sm text-secondary-medium">11/2022 - 12/2022</p>
-                    <p class="mt-3 text-sm text-green-400 hover:text-green-300">Click for details &rarr;</p>
+                    <p class="mt-3 text-sm text-highlight-accent hover:opacity-80">Click for details &rarr;</p>
                 </div>
                 
                 <!-- Experience Card: Doger Kimya -->
@@ -217,7 +216,7 @@
                     <h3 class="text-xl font-semibold text-highlight-accent">Volunteer Intern</h3>
                     <p class="text-primary-light">DOGER KIMYA TARIM LTD. STI. - Konya, TURKEY</p>
                     <p class="text-sm text-secondary-medium">06/2022 - 07/2022</p>
-                    <p class="mt-3 text-sm text-green-400 hover:text-green-300">Click for details &rarr;</p>
+                    <p class="mt-3 text-sm text-highlight-accent hover:opacity-80">Click for details &rarr;</p>
                 </div>
             </div>
         </div>
@@ -228,7 +227,7 @@
         <div class="container mx-auto px-6">
             <h2 class="text-3xl font-bold mb-12 text-center section-title mx-auto text-primary-light">Skills & Certificates</h2>
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="card-bg p-6 rounded-lg shadow-custom-accent"> <!-- card-bg'yi bg-secondary ile aynı yaptım -->
+                <div class="card-bg p-6 rounded-lg shadow-custom-accent">
                     <h3 class="text-xl font-semibold mb-3 text-highlight-accent">Computer Skills</h3>
                     <ul class="list-disc list-inside text-primary-light space-y-1">
                         <li>MS Office (Word, Excel, Power Point)</li>
@@ -637,4 +636,4 @@
 
     </script>
 </body>
-</html>
+</ht
