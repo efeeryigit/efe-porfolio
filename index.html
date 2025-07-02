@@ -108,7 +108,7 @@
             <div class="hidden md:flex space-x-6">
                 <a href="#about" class="text-secondary-medium hover-text-highlight-accent">About</a>
                 <a href="#experience" class="text-secondary-medium hover-text-highlight-accent">Experience</a>
-                <a href="blog.html" class="text-secondary-medium hover-text-highlight-accent">Blog</a> <!-- YENİ: Blog linki -->
+                <a href="blog.html" class="text-secondary-medium hover-text-highlight-accent">Blog</a>
                 <a href="#skills" class="text-secondary-medium hover-text-highlight-accent">Skills</a>
                 <a href="#education" class="text-secondary-medium hover-text-highlight-accent">Education</a>
                 <a href="#hobbies" class="text-secondary-medium hover-text-highlight-accent">Hobbies</a> 
@@ -126,7 +126,7 @@
         <div id="mobile-nav" class="md:hidden hidden bg-secondary shadow-lg py-2">
             <a href="#about" class="block px-6 py-3 text-secondary-medium hover:bg-primary hover-text-highlight-accent">About</a>
             <a href="#experience" class="block px-6 py-3 text-secondary-medium hover:bg-primary hover-text-highlight-accent">Experience</a>
-            <a href="blog.html" class="block px-6 py-3 text-secondary-medium hover:bg-primary hover-text-highlight-accent">Blog</a> <!-- YENİ: Blog linki (mobil) -->
+            <a href="blog.html" class="block px-6 py-3 text-secondary-medium hover:bg-primary hover-text-highlight-accent">Blog</a>
             <a href="#skills" class="block px-6 py-3 text-secondary-medium hover:bg-primary hover-text-highlight-accent">Skills</a>
             <a href="#education" class="block px-6 py-3 text-secondary-medium hover:bg-primary hover-text-highlight-accent">Education</a>
             <a href="#hobbies" class="block px-6 py-3 text-secondary-medium hover:bg-primary hover-text-highlight-accent">Hobbies</a> 
@@ -169,7 +169,7 @@
         </div>
     </section>
 
-    <!-- YENİ: Blog Preview Section -->
+    <!-- Blog Preview Section -->
     <section id="blog-preview" class="py-16 md:py-24 bg-primary">
         <div class="container mx-auto px-6">
             <h2 class="text-3xl font-bold mb-12 text-center section-title mx-auto text-primary-light">From the Blog</h2>
@@ -697,238 +697,6 @@
                 }
             });
         }
-    </script>
-</body>
-</html>
-```html
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Efe Eryiğit | Blog</title>
-    <script src="[https://cdn.tailwindcss.com](https://cdn.tailwindcss.com)"></script>
-    <link href="[https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap](https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap)" rel="stylesheet">
-    <style>
-        :root {
-            --vibrant-emerald: #2ECC71;
-            --charcoal-black: #1C1C1C;
-            --ash-gray: #B0B0B0;
-            --light-gray-bg: #2a2a2a;
-            --text-light: #E5E7EB;
-            --text-medium: #B0B0B0;
-        }
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: var(--charcoal-black); 
-            color: var(--text-light);              
-        }
-        nav a:hover { color: var(--vibrant-emerald); }
-        .blog-card { transition: transform 0.3s ease, box-shadow 0.3s ease; }
-        .blog-card:hover { 
-            transform: translateY(-5px);
-            box-shadow: 0 10px 15px -3px rgba(46, 204, 113, 0.2), 0 4px 6px -2px rgba(46, 204, 113, 0.1); 
-        }
-        .bg-primary { background-color: var(--charcoal-black); }
-        .bg-secondary { background-color: var(--light-gray-bg); }
-        .text-primary-light { color: var(--text-light); }
-        .text-secondary-medium { color: var(--text-medium); }
-        .text-highlight-accent { color: var(--vibrant-emerald); } 
-        .hover-text-highlight-accent:hover { color: var(--vibrant-emerald); } 
-        .shadow-custom-accent { box-shadow: 0 10px 15px -3px rgba(46, 204, 113, 0.1), 0 4px 6px -2px rgba(46, 204, 113, 0.05); } 
-    </style>
-</head>
-<body class="antialiased bg-primary text-primary-light">
-
-    <!-- Navigation -->
-    <nav class="bg-secondary shadow-xl sticky w-full z-50 top-0">
-        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="index.html" class="text-2xl font-bold text-highlight-accent">Efe Eryiğit</a>
-            <div class="hidden md:flex space-x-6">
-                <a href="index.html#about" class="text-secondary-medium hover-text-highlight-accent">About</a>
-                <a href="index.html#experience" class="text-secondary-medium hover-text-highlight-accent">Experience</a>
-                <a href="blog.html" class="text-highlight-accent font-bold">Blog</a>
-                <a href="index.html#skills" class="text-secondary-medium hover-text-highlight-accent">Skills</a>
-                <a href="index.html#education" class="text-secondary-medium hover-text-highlight-accent">Education</a>
-                <a href="index.html#hobbies" class="text-secondary-medium hover-text-highlight-accent">Hobbies</a> 
-                <a href="index.html#contact" class="text-secondary-medium hover-text-highlight-accent">Contact</a>
-            </div>
-            <!-- Mobil menü butonu buraya eklenebilir -->
-        </div>
-    </nav>
-
-    <!-- Main Content -->
-    <main class="container mx-auto px-6 py-16 md:py-24">
-        <header class="text-center mb-16">
-            <h1 class="text-4xl md:text-5xl font-bold text-primary-light">My Blog</h1>
-            <p class="text-lg text-secondary-medium mt-4">Thoughts on digital marketing, technology, and personal growth.</p>
-        </header>
-
-        <!-- Blog Post List -->
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <!-- Blog Post Card 1 (Örnek) -->
-            <a href="blog/seo-temelleri.html" class="blog-card block bg-secondary p-6 rounded-lg shadow-custom-accent">
-                <p class="text-secondary-medium text-sm mb-2">July 01, 2025</p>
-                <h3 class="text-xl font-semibold text-highlight-accent mb-3">SEO Temelleri: Web Sitenizi Google'da Nasıl Yükseltirsiniz?</h3>
-                <p class="text-primary-light text-sm">Arama motoru optimizasyonunun (SEO) temellerini öğrenin ve web sitenizin görünürlüğünü artırmak için ilk adımları atın...</p>
-                <span class="inline-block mt-4 text-highlight-accent font-semibold text-sm hover:opacity-80">Read More &rarr;</span>
-            </a>
-            <!-- Blog Post Card 2 (Örnek) -->
-            <a href="blog/dijital-pazarlama-trendleri.html" class="blog-card block bg-secondary p-6 rounded-lg shadow-custom-accent">
-                <p class="text-secondary-medium text-sm mb-2">June 25, 2025</p>
-                <h3 class="text-xl font-semibold text-highlight-accent mb-3">2025'in Öne Çıkan Dijital Pazarlama Trendleri</h3>
-                <p class="text-primary-light text-sm">Yapay zeka, kişiselleştirme ve video içeriklerin yükselişi... Bu yıl dijital pazarlama dünyasında nelerin öne çıktığını keşfedin.</p>
-                <span class="inline-block mt-4 text-highlight-accent font-semibold text-sm hover:opacity-80">Read More &rarr;</span>
-            </a>
-            <!-- Blog Post Card 3 (Örnek) -->
-            <a href="blog/icerik-stratejisi.html" class="blog-card block bg-secondary p-6 rounded-lg shadow-custom-accent">
-                <p class="text-secondary-medium text-sm mb-2">June 18, 2025</p>
-                <h3 class="text-xl font-semibold text-highlight-accent mb-3">Etkili Bir İçerik Stratejisi Nasıl Oluşturulur?</h3>
-                <p class="text-primary-light text-sm">Hedef kitlenize ulaşan ve onları harekete geçiren bir içerik stratejisi oluşturmanın adımlarını öğrenin.</p>
-                <span class="inline-block mt-4 text-highlight-accent font-semibold text-sm hover:opacity-80">Read More &rarr;</span>
-            </a>
-            <!-- Gelecekteki blog yazıları buraya eklenecek -->
-        </div>
-    </main>
-
-    <!-- Footer -->
-    <footer class="bg-secondary text-secondary-medium py-8 text-center mt-16">
-        <p>&copy; <span id="currentYear"></span> Efe Eryiğit. All rights reserved.</p>
-    </footer>
-
-    <script>
-        document.getElementById('currentYear').textContent = new Date().getFullYear();
-    </script>
-</body>
-</html>
-```html
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <!-- SEO için Önemli Meta Etiketleri -->
-    <meta name="description" content="Buraya yazının kısa bir özeti (yaklaşık 160 karakter) gelecek.">
-    <meta name="keywords" content="anahtar kelime 1, anahtar kelime 2, anahtar kelime 3">
-    <meta name="author" content="Efe Eryiğit">
-
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog Yazısı Başlığı | Efe Eryiğit</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --vibrant-emerald: #2ECC71;
-            --charcoal-black: #1C1C1C;
-            --ash-gray: #B0B0B0;
-            --light-gray-bg: #2a2a2a;
-            --text-light: #E5E7EB;
-            --text-medium: #B0B0B0;
-        }
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: var(--charcoal-black); 
-            color: var(--text-light);              
-        }
-        nav a:hover { color: var(--vibrant-emerald); }
-        .bg-primary { background-color: var(--charcoal-black); }
-        .bg-secondary { background-color: var(--light-gray-bg); }
-        .text-primary-light { color: var(--text-light); }
-        .text-secondary-medium { color: var(--text-medium); }
-        .text-highlight-accent { color: var(--vibrant-emerald); } 
-        .hover-text-highlight-accent:hover { color: var(--vibrant-emerald); } 
-        /* Blog içeriği için stiller */
-        .prose {
-            color: var(--text-light);
-        }
-        .prose h1, .prose h2, .prose h3 {
-            color: var(--text-light);
-        }
-        .prose a {
-            color: var(--vibrant-emerald);
-            text-decoration: underline;
-        }
-        .prose blockquote {
-            border-left-color: var(--vibrant-emerald);
-            color: var(--text-medium);
-        }
-        .prose code {
-            color: var(--text-light);
-            background-color: var(--light-gray-bg);
-            padding: 0.2em 0.4em;
-            border-radius: 0.25rem;
-        }
-    </style>
-</head>
-<body class="antialiased bg-primary text-primary-light">
-
-    <!-- Navigation -->
-    <nav class="bg-secondary shadow-xl sticky w-full z-50 top-0">
-        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="../index.html" class="text-2xl font-bold text-highlight-accent">Efe Eryiğit</a>
-            <div class="hidden md:flex space-x-6">
-                <a href="../index.html#about" class="text-secondary-medium hover-text-highlight-accent">About</a>
-                <a href="../index.html#experience" class="text-secondary-medium hover-text-highlight-accent">Experience</a>
-                <a href="../blog.html" class="text-secondary-medium hover-text-highlight-accent">Blog</a>
-                <a href="../index.html#skills" class="text-secondary-medium hover-text-highlight-accent">Skills</a>
-                <a href="../index.html#education" class="text-secondary-medium hover-text-highlight-accent">Education</a>
-                <a href="../index.html#hobbies" class="text-secondary-medium hover-text-highlight-accent">Hobbies</a> 
-                <a href="../index.html#contact" class="text-secondary-medium hover-text-highlight-accent">Contact</a>
-            </div>
-            <!-- Mobil menü butonu buraya eklenebilir -->
-        </div>
-    </nav>
-
-    <!-- Main Content -->
-    <main class="container mx-auto px-6 py-16 md:py-24">
-        <article class="prose prose-lg max-w-4xl mx-auto">
-            <!-- YAZI BAŞLIĞI -->
-            <h1 class="text-4xl md:text-5xl font-bold mb-4">Buraya Blog Yazınızın Başlığını Yazın</h1>
-            
-            <!-- YAZAR VE TARİH BİLGİSİ -->
-            <p class="text-secondary-medium">
-                <span>Yazan: Efe Eryiğit</span> | 
-                <span>Yayınlanma Tarihi: 02 Temmuz 2025</span>
-            </p>
-
-            <!-- GİRİŞ PARAGRAFI -->
-            <p class="lead">Bu bölüm, yazınızın dikkat çekici giriş paragrafıdır. Okuyucunun ilgisini çekecek ve yazının geri kalanını okumaya teşvik edecek şekilde tasarlanmalıdır.</p>
-            
-            <!-- ANA İÇERİK -->
-            <p>Buradan itibaren yazınızın ana metnini yazabilirsiniz. Paragraflar arasında boşluk bırakarak okunabilirliği artırın. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.</p>
-            
-            <p>Yazınıza görseller ekleyebilirsiniz. Görseli `../images` klasörüne yüklemeyi ve yolunu doğru vermeyi unutmayın.</p>
-            <figure>
-                <img src="../images/placeholder.jpg" alt="Görsel açıklaması buraya gelecek" class="rounded-lg shadow-lg">
-                <figcaption class="text-center text-sm text-secondary-medium mt-2">Görsel için bir başlık veya açıklama.</figcaption>
-            </figure>
-
-            <!-- ALT BAŞLIK -->
-            <h2>Alt Başlıklar Kullanarak İçeriği Bölümlere Ayırın</h2>
-            <p>Uzun yazıları alt başlıklarla bölmek, okuyucunun içeriği daha kolay taramasına ve anlamasına yardımcı olur. Bu aynı zamanda SEO için de önemlidir.</p>
-            
-            <!-- LİSTE ÖRNEĞİ -->
-            <h3>Madde İşaretli Liste</h3>
-            <ul>
-                <li>Birinci madde.</li>
-                <li>İkinci madde.</li>
-                <li>Üçüncü madde.</li>
-            </ul>
-
-            <!-- ALINTI ÖRNEĞİ -->
-            <blockquote>"Buraya dikkat çekici bir alıntı veya önemli bir not ekleyebilirsiniz. Bu, metin içinde görsel bir mola sağlar."</blockquote>
-
-            <p>Yazınızı bir sonuç paragrafı ile bitirin. Ana noktaları özetleyin ve okuyucuya bir eylem çağrısı (call-to-action) sunun, örneğin yorum yapmaya veya sosyal medyada paylaşmaya teşvik edin.</p>
-
-        </article>
-    </main>
-
-    <!-- Footer -->
-    <footer class="bg-secondary text-secondary-medium py-8 text-center mt-16">
-        <p>&copy; <span id="currentYear"></span> Efe Eryiğit. All rights reserved.</p>
-    </footer>
-
-    <script>
-        document.getElementById('currentYear').textContent = new Date().getFullYear();
     </script>
 </body>
 </html>
