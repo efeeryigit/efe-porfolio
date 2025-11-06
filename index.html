@@ -21,8 +21,8 @@
         body {
             font-family: 'Inter', sans-serif;
             scroll-behavior: smooth;
-            background-color: var(--charcoal-black); 
-            color: var(--text-light);              
+            background-color: var(--charcoal-black);  
+            color: var(--text-light);          
         }
         .modal {
             transition: opacity 0.3s ease, visibility 0.3s ease;
@@ -35,7 +35,7 @@
             display: block;
             width: 60px;
             height: 3px;
-            background-color: var(--vibrant-emerald); 
+            background-color: var(--vibrant-emerald);  
             margin-top: 8px;
             border-radius: 2px;
         }
@@ -43,25 +43,29 @@
             transition: color 0.3s ease;
         }
         nav a:hover {
-            color: var(--vibrant-emerald); 
+            color: var(--vibrant-emerald);  
         }
-        .experience-card, .hobby-card, .blog-card { /* blog-card sınıfı eklendi */
+        .experience-card, .hobby-card, .blog-card { 
             transition: transform 0.3s ease, box-shadow 0.3s ease;
+            /* YENİ: Kartların eşit yükseklikte olmasını sağlamak için */
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
-        .experience-card:hover, .hobby-card:hover, .blog-card:hover { 
+        .experience-card:hover, .hobby-card:hover, .blog-card:hover {  
             transform: translateY(-5px);
-            box-shadow: 0 10px 15px -3px rgba(46, 204, 113, 0.2), 0 4px 6px -2px rgba(46, 204, 113, 0.1); 
+            box-shadow: 0 10px 15px -3px rgba(46, 204, 113, 0.2), 0 4px 6px -2px rgba(46, 204, 113, 0.1);  
         }
         .hero-bg {
-             background-color: #111111; 
+             background-color: #111111;  
         }
         .card-bg {
-            background-color: var(--light-gray-bg); 
+            background-color: var(--light-gray-bg);  
         }
         .text-accent {
-            color: var(--vibrant-emerald); 
+            color: var(--vibrant-emerald);  
         }
-        .button-cv { /* CV butonu için özel stil */
+        .button-cv { 
             background-color: var(--vibrant-emerald);
             color: var(--charcoal-black);
             transition: background-color 0.3s ease, transform 0.2s ease;
@@ -73,35 +77,39 @@
             text-decoration: none;
         }
         .button-cv:hover {
-            background-color: #27AE60; /* Zümrüt yeşilinin biraz daha koyu tonu */
+            background-color: #27AE60; 
             transform: translateY(-2px);
         }
         .button-cv i {
             margin-right: 0.5rem;
         }
         .modal-backdrop-color {
-            background-color: rgba(0, 0, 0, 0.85); 
+            background-color: rgba(0, 0, 0, 0.85);  
         }
         .modal-content-bg {
-             background-color: var(--light-gray-bg); 
+             background-color: var(--light-gray-bg);  
         }
         
         /* Tailwind Direktifleri ile Renk Uygulamaları */
         .bg-primary { background-color: var(--charcoal-black); }
         .bg-secondary { background-color: var(--light-gray-bg); }
-        .bg-hero { background-color: #111111; } 
+        .bg-hero { background-color: #111111; }  
         .text-primary-light { color: var(--text-light); }
         .text-secondary-medium { color: var(--text-medium); }
-        .text-highlight-accent { color: var(--vibrant-emerald); } 
-        .border-highlight-accent { border-color: var(--vibrant-emerald); } 
-        .hover-text-highlight-accent:hover { color: var(--vibrant-emerald); } 
-        .shadow-custom-accent { box-shadow: 0 10px 15px -3px rgba(46, 204, 113, 0.1), 0 4px 6px -2px rgba(46, 204, 113, 0.05); } 
+        .text-highlight-accent { color: var(--vibrant-emerald); }  
+        .border-highlight-accent { border-color: var(--vibrant-emerald); }  
+        .hover-text-highlight-accent:hover { color: var(--vibrant-emerald); }  
+        .shadow-custom-accent { box-shadow: 0 10px 15px -3px rgba(46, 204, 113, 0.1), 0 4px 6px -2px rgba(46, 204, 113, 0.05); }  
 
     </style>
 </head>
 <body class="antialiased bg-primary text-primary-light">
 
-    <nav class="bg-secondary shadow-xl fixed w-full z-50 top-0">
+    <div class="fixed top-0 left-0 w-full h-1 z-[60]" style="background-color: var(--light-gray-bg);"> 
+        <div id="scroll-progress-bar" class="h-full" style="width: 0%; background-color: var(--vibrant-emerald); transition: width 0.05s ease-out;"></div>
+    </div>
+
+    <nav class="bg-secondary shadow-xl fixed w-full z-50 top-1">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
             <a href="index.html" class="text-2xl font-bold text-highlight-accent">Efe Eryiğit</a>
             <div class="hidden md:flex space-x-6">
@@ -109,7 +117,7 @@
                 <a href="#experience" class="text-secondary-medium hover-text-highlight-accent">Experience</a>
                 <a href="#skills" class="text-secondary-medium hover-text-highlight-accent">Skills</a>
                 <a href="#education" class="text-secondary-medium hover-text-highlight-accent">Education</a>
-                <a href="#hobbies" class="text-secondary-medium hover-text-highlight-accent">Extracurriculars</a> 
+                <a href="#hobbies" class="text-secondary-medium hover-text-highlight-accent">Extracurriculars</a>  
                 <a href="#contact" class="text-secondary-medium hover-text-highlight-accent">Contact</a>
             </div>
             <div class="md:hidden">
@@ -125,12 +133,12 @@
             <a href="#experience" class="block px-6 py-3 text-secondary-medium hover:bg-primary hover-text-highlight-accent">Experience</a>
             <a href="#skills" class="block px-6 py-3 text-secondary-medium hover:bg-primary hover-text-highlight-accent">Skills</a>
             <a href="#education" class="block px-6 py-3 text-secondary-medium hover:bg-primary hover-text-highlight-accent">Education</a>
-            <a href="#hobbies" class="block px-6 py-3 text-secondary-medium hover:bg-primary hover-text-highlight-accent">Extracurriculars</a> 
+            <a href="#hobbies" class="block px-6 py-3 text-secondary-medium hover:bg-primary hover-text-highlight-accent">Extracurriculars</a>  
             <a href="#contact" class="block px-6 py-3 text-secondary-medium hover:bg-primary hover-text-highlight-accent">Contact</a>
         </div>
     </nav>
 
-    <header id="home" class="bg-hero text-primary-light pt-32 pb-20 md:pt-48 md:pb-32 flex flex-col md:flex-row items-center justify-center text-center md:text-left">
+    <header id="home" class="bg-hero text-primary-light pt-[132px] pb-20 md:pt-48 md:pb-32 flex flex-col md:flex-row items-center justify-center text-center md:text-left">
         <div class="container mx-auto px-6 flex flex-col md:flex-row items-center">
             <div class="md:w-1/3 mb-8 md:mb-0 md:mr-12 flex justify-center">
                 <img src="images/efe_eryigit_linkedin_foto.jpg" alt="Basri Efe Eryiğit Portre Fotoğrafı" class="rounded-full shadow-2xl w-48 h-48 md:w-56 md:h-56 object-cover border-4 border-highlight-accent">
@@ -163,84 +171,109 @@
         </div>
     </section>
 
-    <section id="experience" class="py-16 md:py-24 bg-secondary">
+    <section id="experience" class="py-16 md:py-24 bg-primary"> 
         <div class="container mx-auto px-6">
             <h2 class="text-3xl font-bold mb-12 text-center section-title mx-auto text-primary-light">Experience</h2>
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <section id="experience" class="container mx-auto px-6 py-16 md:py-24">
-        
-        <header class="text-center mb-16">
-            <h2 class="text-4xl md:text-5xl font-bold text-primary-light">Experience</h2>
-            <p class="text-lg text-secondary-medium mt-4">My professional journey so far.</p>
-        </header>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <div class="experience-card bg-secondary p-6 rounded-lg shadow-custom-accent cursor-pointer" data-modal-target="eczacibasiModal">
+                    <div> <h3 class="text-xl font-semibold text-highlight-accent">Media Planning Intern</h3>
+                        <p class="text-primary-light">Eczacıbaşı Yapı Ürünleri - Istanbul, Türkiye</p>
+                        <p class="text-sm text-secondary-medium">10/2025 - Present</p>
+                    </div>
+                    <p class="mt-3 text-sm text-highlight-accent hover:opacity-80">Click for details &rarr;</p>  
+                </div>
+                
+                <div class="experience-card bg-secondary p-6 rounded-lg shadow-custom-accent cursor-pointer" data-modal-target="eryishopModal">
+                    <div>
+                        <h3 class="text-xl font-semibold text-highlight-accent">Owner</h3>
+                        <p class="text-primary-light">ERYISHOP LLC - Wyoming, United States</p>
+                        <p class="text-sm text-secondary-medium">08/2025 - Present</p>
+                    </div>
+                    <p class="mt-3 text-sm text-highlight-accent hover:opacity-80">Click for details &rarr;</p>  
+                </div>
 
-        <div class="bg-secondary rounded-lg p-6 md:p-8 shadow-custom-accent max-w-3xl mx-auto">
-            
-            <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-2">
-            
-                 <div class="experience-card bg-primary p-6 rounded-lg shadow-custom-accent cursor-pointer" data-modal-target="eryishopModal">
-                    <h3 class="text-xl font-semibold text-highlight-accent">Owner</h3>
-                    <p class="text-primary-light">ERYISHOP LLC - Wyoming, United States</p>
-                    <p class="text-sm text-secondary-medium">08/2025 - Present</p>
-                    <p class="mt-3 text-sm text-highlight-accent hover:opacity-80">Click for details &rarr;</p> 
+                <div class="experience-card bg-secondary p-6 rounded-lg shadow-custom-accent cursor-pointer" data-modal-target="sigortaAcentesiModal">
+                    <div>
+                        <h3 class="text-xl font-semibold text-highlight-accent">Brand Growth Specialist</h3>
+                        <p class="text-primary-light">SigortaAcentesi.com - Istanbul, TURKEY</p>
+                        <p class="text-sm text-secondary-medium">07/2025 - Present</p>
+                    </div>
+                    <p class="mt-3 text-sm text-highlight-accent hover:opacity-80">Click for details &rarr;</p>  
                 </div>
-                <div class="experience-card bg-primary p-6 rounded-lg shadow-custom-accent cursor-pointer" data-modal-target="sigortaAcentesiModal">
-                    <h3 class="text-xl font-semibold text-highlight-accent">Brand Growth Specialist</h3>
-                    <p class="text-primary-light">SigortaAcentesi.com - Istanbul, TURKEY</p>
-                    <p class="text-sm text-secondary-medium">07/2025 - Present</p>
-                    <p class="mt-3 text-sm text-highlight-accent hover:opacity-80">Click for details &rarr;</p> 
-                </div>
-                <div class="experience-card bg-primary p-6 rounded-lg shadow-custom-accent cursor-pointer" data-modal-target="evyapModal">
-                    <h3 class="text-xl font-semibold text-highlight-accent">Digital Marketing Intern</h3>
-                    <p class="text-primary-light">EVYAP SABUN A.Ş. - Istanbul, TURKEY</p>
-                    <p class="text-sm text-secondary-medium">02/2025 - 07/2025</p>
+
+                <div class="experience-card bg-secondary p-6 rounded-lg shadow-custom-accent cursor-pointer" data-modal-target="evyapModal">
+                    <div>
+                        <h3 class="text-xl font-semibold text-highlight-accent">Digital Marketing Intern</h3>
+                        <p class="text-primary-light">EVYAP SABUN A.Ş. - Istanbul, TURKEY</p>
+                        <p class="text-sm text-secondary-medium">02/2025 - 07/2025</p>
+                    </div>
                     <p class="mt-3 text-sm text-highlight-accent hover:opacity-80">Click for details &rarr;</p>
                 </div>
-                <div class="experience-card bg-primary p-6 rounded-lg shadow-custom-accent cursor-pointer" data-modal-target="ozuBusinessModal">
-                    <h3 class="text-xl font-semibold text-highlight-accent">President</h3>
-                    <p class="text-primary-light">Ozyegin Business Club - Istanbul, TURKEY</p>
-                    <p class="text-sm text-secondary-medium">06/2024 - 07/2025</p>
-                    <p class="mt-3 text-sm text-highlight-accent hover:opacity-80">Click for details & photos &rarr;</p> 
+
+                <div class="experience-card bg-secondary p-6 rounded-lg shadow-custom-accent cursor-pointer" data-modal-target="ozuBusinessModal">
+                    <div>
+                        <h3 class="text-xl font-semibold text-highlight-accent">President</h3>
+                        <p class="text-primary-light">Ozyegin Business Club - Istanbul, TURKEY</p>
+                        <p class="text-sm text-secondary-medium">06/2024 - 07/2025</p>
+                    </div>
+                    <p class="mt-3 text-sm text-highlight-accent hover:opacity-80">Click for details & photos &rarr;</p>  
                 </div>
-                <div class="experience-card bg-primary p-6 rounded-lg shadow-custom-accent cursor-pointer" data-modal-target="viralightModal">
-                    <h3 class="text-xl font-semibold text-highlight-accent">Co-Founder</h3>
-                    <p class="text-primary-light">Viralight App - Istanbul, TURKEY</p>
-                    <p class="text-sm text-secondary-medium">02/2025 - 04/2025</p>
+
+                <div class="experience-card bg-secondary p-6 rounded-lg shadow-custom-accent cursor-pointer" data-modal-target="viralightModal">
+                    <div>
+                        <h3 class="text-xl font-semibold text-highlight-accent">Co-Founder</h3>
+                        <p class="text-primary-light">Viralight App - Istanbul, TURKEY</p>
+                        <p class="text-sm text-secondary-medium">02/2025 - 04/2025</p>
+                    </div>
                     <p class="mt-3 text-sm text-highlight-accent hover:opacity-80">Click for details &rarr;</p>
                 </div>
-                <div class="experience-card bg-primary p-6 rounded-lg shadow-custom-accent cursor-pointer" data-modal-target="fridgeBuddyModal">
-                    <h3 class="text-xl font-semibold text-highlight-accent">Co-Founder</h3>
-                    <p class="text-primary-light">Fridge Buddy App – Istanbul, TURKEY</p>
-                    <p class="text-sm text-secondary-medium">01/2025 – 02/2025</p>
+
+                <div class="experience-card bg-secondary p-6 rounded-lg shadow-custom-accent cursor-pointer" data-modal-target="fridgeBuddyModal">
+                    <div>
+                        <h3 class="text-xl font-semibold text-highlight-accent">Co-Founder</h3>
+                        <p class="text-primary-light">Fridge Buddy App – Istanbul, TURKEY</p>
+                        <p class="text-sm text-secondary-medium">01/2025 – 02/2025</p>
+                    </div>
                     <p class="mt-3 text-sm text-highlight-accent hover:opacity-80">Click for details &rarr;</p>
                 </div>
-                 <div class="experience-card bg-primary p-6 rounded-lg shadow-custom-accent cursor-pointer" data-modal-target="zarastroModal">
-                    <h3 class="text-xl font-semibold text-highlight-accent">Volunteer Intern, Marketing, Sales</h3>
-                    <p class="text-primary-light">ZARASTRO ART - Istanbul, TURKEY</p>
-                    <p class="text-sm text-secondary-medium">08/2023 - 10/2023</p>
+
+                <div class="experience-card bg-secondary p-6 rounded-lg shadow-custom-accent cursor-pointer" data-modal-target="zarastroModal">
+                    <div>
+                        <h3 class="text-xl font-semibold text-highlight-accent">Volunteer Intern, Marketing, Sales</h3>
+                        <p class="text-primary-light">ZARASTRO ART - Istanbul, TURKEY</p>
+                        <p class="text-sm text-secondary-medium">08/2023 - 10/2023</p>
+                    </div>
                     <p class="mt-3 text-sm text-highlight-accent hover:opacity-80">Click for details &rarr;</p>
                 </div>
-                <div class="experience-card bg-primary p-6 rounded-lg shadow-custom-accent cursor-pointer" data-modal-target="asyalogicModal">
-                    <h3 class="text-xl font-semibold text-highlight-accent">Part-Time Data Entry Operator</h3>
-                    <p class="text-primary-light">ASYALOGIC - Istanbul, TURKEY</p>
-                    <p class="text-sm text-secondary-medium">11/2022 - 12/2022</p>
+
+                <div class="experience-card bg-secondary p-6 rounded-lg shadow-custom-accent cursor-pointer" data-modal-target="asyalogicModal">
+                    <div>
+                        <h3 class="text-xl font-semibold text-highlight-accent">Part-Time Data Entry Operator</h3>
+                        <p class="text-primary-light">ASYALOGIC - Istanbul, TURKEY</p>
+                        <p class="text-sm text-secondary-medium">11/2022 - 12/2022</p>
+                    </div>
                     <p class="mt-3 text-sm text-highlight-accent hover:opacity-80">Click for details &rarr;</p>
                 </div>
-                <div class="experience-card bg-primary p-6 rounded-lg shadow-custom-accent cursor-pointer" data-modal-target="dogerKimyaModal">
-                    <h3 class="text-xl font-semibold text-highlight-accent">Volunteer Intern</h3>
-                    <p class="text-primary-light">DOGER KIMYA TARIM LTD. STI. - Konya, TURKEY</p>
-                    <p class="text-sm text-secondary-medium">06/2022 - 07/2022</p>
+
+                <div class="experience-card bg-secondary p-6 rounded-lg shadow-custom-accent cursor-pointer" data-modal-target="dogerKimyaModal">
+                    <div>
+                        <h3 class="text-xl font-semibold text-highlight-accent">Volunteer Intern</h3>
+                        <p class="text-primary-light">DOGER KIMYA TARIM LTD. STI. - Konya, TURKEY</p>
+                        <p class="text-sm text-secondary-medium">06/2022 - 07/2022</p>
+                    </div>
                     <p class="mt-3 text-sm text-highlight-accent hover:opacity-80">Click for details &rarr;</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="skills" class="py-16 md:py-24 bg-primary">
+    <section id="skills" class="py-16 md:py-24 bg-secondary">
          <div class="container mx-auto px-6">
             <h2 class="text-3xl font-bold mb-12 text-center section-title mx-auto text-primary-light">Skills & Certificates</h2>
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="bg-secondary p-6 rounded-lg shadow-custom-accent">
+                <div class="bg-primary p-6 rounded-lg shadow-custom-accent">
                     <h3 class="text-xl font-semibold mb-3 text-highlight-accent">Computer Skills</h3>
                     <ul class="list-disc list-inside text-primary-light space-y-1">
                         <li>MS Office (Word, Excel, Power Point)</li>
@@ -250,7 +283,7 @@
                         <li>HTML (Beginner)</li>
                     </ul>
                 </div>
-                <div class="bg-secondary p-6 rounded-lg shadow-custom-accent">
+                <div class="bg-primary p-6 rounded-lg shadow-custom-accent">
                     <h3 class="text-xl font-semibold mb-3 text-highlight-accent">Certificates</h3>
                     <ul class="list-disc list-inside text-primary-light space-y-1">
                         <li>Startcamp Entrepreneurship Camp</li>
@@ -259,7 +292,7 @@
                         <li>Apple Search Ads Certification</li>
                     </ul>
                 </div>
-                <div class="bg-secondary p-6 rounded-lg shadow-custom-accent">
+                <div class="bg-primary p-6 rounded-lg shadow-custom-accent">
                     <h3 class="text-xl font-semibold mb-3 text-highlight-accent">Language Skills</h3>
                     <ul class="list-disc list-inside text-primary-light space-y-1">
                         <li>English (Written and oral fluency)</li>
@@ -271,21 +304,21 @@
         </div>
     </section>
 
-    <section id="education" class="py-16 md:py-24 bg-secondary">
+    <section id="education" class="py-16 md:py-24 bg-primary">
         <div class="container mx-auto px-6">
             <h2 class="text-3xl font-bold mb-12 text-center section-title mx-auto text-primary-light">Education</h2>
-            <div class="space-y-8">
-                <div class="bg-primary p-6 rounded-lg shadow-custom-accent">
+            <div class="space-y-8 max-w-3xl mx-auto"> 
+                <div class="bg-secondary p-6 rounded-lg shadow-custom-accent">
                     <h3 class="text-xl font-semibold text-highlight-accent">ÖZYEĞİN UNIVERSITY</h3>
                     <p class="text-primary-light">Faculty of Business, Department of Management Information Systems</p>
                     <p class="text-sm text-secondary-medium">Istanbul, TURKEY | 2021 - Present (4th Year)</p>
                     <p class="text-sm text-secondary-medium">Honors: 50% Performance Scholarship</p>
                 </div>
-                <div class="bg-primary p-6 rounded-lg shadow-custom-accent">
+                <div class="bg-secondary p-6 rounded-lg shadow-custom-accent">
                     <h3 class="text-xl font-semibold text-highlight-accent">TED KONYA HIGH SCHOOL</h3>
                     <p class="text-sm text-secondary-medium">Konya, TURKEY | 2018 - 2021</p>
                 </div>
-                 <div class="bg-primary p-6 rounded-lg shadow-custom-accent">
+                 <div class="bg-secondary p-6 rounded-lg shadow-custom-accent">
                     <h3 class="text-xl font-semibold text-highlight-accent">KONYA SOCIAL SCIENCES HIGH SCHOOL</h3>
                     <p class="text-sm text-secondary-medium">Konya, TURKEY | 2016 - 2018</p>
                 </div>
@@ -293,51 +326,51 @@
         </div>
     </section>
 
-    <section id="hobbies" class="py-16 md:py-24 bg-primary">
+    <section id="hobbies" class="py-16 md:py-24 bg-secondary">
         <div class="container mx-auto px-6">
             <h2 class="text-3xl font-bold mb-12 text-center section-title mx-auto text-primary-light">Extracurricular Activities</h2>
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="hobby-card bg-secondary p-6 rounded-lg shadow-custom-accent">
+                <div class="hobby-card bg-primary p-6 rounded-lg shadow-custom-accent">
                     <h3 class="text-xl font-semibold text-highlight-accent mb-2">President, OzU Business Club</h3>
                     <p class="text-sm text-secondary-medium mb-1">June 2024 - July 2025</p>
                 </div>
-                <div class="hobby-card bg-secondary p-6 rounded-lg shadow-custom-accent">
+                <div class="hobby-card bg-primary p-6 rounded-lg shadow-custom-accent">
                     <h3 class="text-xl font-semibold text-highlight-accent mb-2">Board Member, OzU Business Club</h3>
                     <p class="text-sm text-secondary-medium mb-1">June 2023 - July 2024</p>
                 </div>
-                <div class="hobby-card bg-secondary p-6 rounded-lg shadow-custom-accent">
+                <div class="hobby-card bg-primary p-6 rounded-lg shadow-custom-accent">
                     <h3 class="text-xl font-semibold text-highlight-accent mb-2">Social Responsibility Project, Beyond the Adventure</h3>
                     <p class="text-sm text-secondary-medium mb-1">May 2024</p>
                 </div>
-                <div class="hobby-card bg-secondary p-6 rounded-lg shadow-custom-accent">
+                <div class="hobby-card bg-primary p-6 rounded-lg shadow-custom-accent">
                     <h3 class="text-xl font-semibold text-highlight-accent mb-2">Active Member, OzU Outdoor Club</h3>
                     <p class="text-sm text-secondary-medium mb-1">2022 - Present</p>
                 </div>
-                <div class="hobby-card bg-secondary p-6 rounded-lg shadow-custom-accent">
+                <div class="hobby-card bg-primary p-6 rounded-lg shadow-custom-accent">
                     <h3 class="text-xl font-semibold text-highlight-accent mb-2">Active Event Team Member, Radio OzU</h3>
                     <p class="text-sm text-secondary-medium mb-1">2022 - Present</p>
                 </div>
-                <div class="hobby-card bg-secondary p-6 rounded-lg shadow-custom-accent">
+                <div class="hobby-card bg-primary p-6 rounded-lg shadow-custom-accent">
                     <h3 class="text-xl font-semibold text-highlight-accent mb-2">Broadcaster at Radio OzU</h3>
                     <p class="text-sm text-secondary-medium mb-1">2022 - Present</p>
                 </div>
-                <div class="hobby-card bg-secondary p-6 rounded-lg shadow-custom-accent">
+                <div class="hobby-card bg-primary p-6 rounded-lg shadow-custom-accent">
                     <h3 class="text-xl font-semibold text-highlight-accent mb-2">Bachata Dancer, OzU Dance Club</h3>
                     <p class="text-sm text-secondary-medium mb-1">2022 - 2025</p>
                 </div>
-                <div class="hobby-card bg-secondary p-6 rounded-lg shadow-custom-accent">
+                <div class="hobby-card bg-primary p-6 rounded-lg shadow-custom-accent">
                     <h3 class="text-xl font-semibold text-highlight-accent mb-2">Active Member, OzU Business Club</h3>
                     <p class="text-sm text-secondary-medium mb-1">2022 - 2023</p>
                 </div>
-                <div class="hobby-card bg-secondary p-6 rounded-lg shadow-custom-accent">
+                <div class="hobby-card bg-primary p-6 rounded-lg shadow-custom-accent">
                     <h3 class="text-xl font-semibold text-highlight-accent mb-2">OzU Wolves American Football</h3>
                     <p class="text-sm text-secondary-medium mb-1">2021 - 2022</p>
                 </div>
-                <div class="hobby-card bg-secondary p-6 rounded-lg shadow-custom-accent">
+                <div class="hobby-card bg-primary p-6 rounded-lg shadow-custom-accent">
                     <h3 class="text-xl font-semibold text-highlight-accent mb-2">Konya Ayyıldız Basketball</h3>
                     <p class="text-sm text-secondary-medium mb-1">2016 - 2018</p>
                 </div>
-                <div class="hobby-card bg-secondary p-6 rounded-lg shadow-custom-accent">
+                <div class="hobby-card bg-primary p-6 rounded-lg shadow-custom-accent">
                     <h3 class="text-xl font-semibold text-highlight-accent mb-2">Konya Selçuklu B. Basketball</h3>
                     <p class="text-sm text-secondary-medium mb-1">2008 - 2016</p>
                 </div>
@@ -345,7 +378,7 @@
         </div>
     </section>
 
-    <section id="contact" class="py-16 md:py-24 bg-secondary">
+    <section id="contact" class="py-16 md:py-24 bg-primary">
          <div class="container mx-auto px-6 text-center">
             <h2 class="text-3xl font-bold mb-12 text-center section-title mx-auto text-primary-light">Contact</h2>
             <p class="text-secondary-medium mb-2 text-lg">Feel free to reach out!</p>
@@ -365,9 +398,29 @@
         </div>
     </section>
 
-    <footer class="bg-primary text-secondary-medium py-8 text-center">
+    <footer class="bg-secondary text-secondary-medium py-8 text-center">
         <p>&copy; <span id="currentYear"></span> Efe Eryiğit. All rights reserved.</p>
     </footer>
+
+    <div id="eczacibasiModal" class="modal fixed inset-0 modal-backdrop-color flex items-center justify-center p-4 opacity-0 invisible z-[100]">
+        <div class="modal-content modal-content-bg p-6 md:p-8 rounded-lg shadow-xl w-full max-w-2xl max-h-[90vh] overflow-y-auto transform scale-95">
+            <div class="flex justify-between items-center mb-6">
+                <h3 class="text-2xl font-semibold text-highlight-accent">Media Planning Intern - Eczacıbaşı Yapı Ürünleri</h3>
+                <button class="close-modal-button text-secondary-medium hover:text-primary-light text-3xl">&times;</button>
+            </div>
+            <div class="text-primary-light space-y-4">
+                 <p class="text-secondary-medium">10/2025 – Present (Hybrid)</p>
+                <ul class="list-disc list-inside space-y-2">
+                    <li>Supported planning and optimization of digital media campaigns across Meta, Google, and YouTube.</li>
+                    <li>Monitored performance metrics and prepared weekly campaign reports.</li>
+                    <li>Collaborated with internal teams and media agencies to ensure brand consistency.</li>
+                    <li>Assisted in A/B tests and performance-based budget allocation.</li>
+                    <li>Researched new media channels and tools to improve campaign efficiency.</li>
+                    <li>Control and planning of content and advertising budgets in the markets of UAE, Qatar, UK, Germany and Turkey.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
 
     <div id="eryishopModal" class="modal fixed inset-0 modal-backdrop-color flex items-center justify-center p-4 opacity-0 invisible z-[100]">
         <div class="modal-content modal-content-bg p-6 md:p-8 rounded-lg shadow-xl w-full max-w-2xl max-h-[90vh] overflow-y-auto transform scale-95">
@@ -525,7 +578,7 @@
     <div id="asyalogicModal" class="modal fixed inset-0 modal-backdrop-color flex items-center justify-center p-4 opacity-0 invisible z-[100]">
         <div class="modal-content modal-content-bg p-6 md:p-8 rounded-lg shadow-xl w-full max-w-2xl max-h-[90vh] overflow-y-auto transform scale-95">
             <div class="flex justify-between items-center mb-6">
-                <h3 class="text-2xl font-semibold text-highlight-accent">Part-Time Data Entry Operator - ASYALOGIC</h3>
+                <h3 class="text-xl font-semibold text-highlight-accent">Part-Time Data Entry Operator - ASYALOGIC</h3>
                 <button class="close-modal-button text-secondary-medium hover:text-primary-light text-3xl">&times;</button>
             </div>
             <div class="text-primary-light space-y-4">
@@ -628,20 +681,20 @@
                 return;
             }
             let currentIndex = 0;
-            dotsContainer.innerHTML = ''; 
+            dotsContainer.innerHTML = '';  
             function updateGallery() {
                 slider.style.transform = `translateX(-${currentIndex * 100}%)`;
                 const dots = dotsContainer.querySelectorAll('.dot');
                 dots.forEach((dot, index) => {
-                    dot.classList.toggle('bg-white', index === currentIndex); 
-                    dot.classList.toggle('bg-gray-500', index !== currentIndex); 
+                    dot.classList.toggle('bg-white', index === currentIndex);  
+                    dot.classList.toggle('bg-gray-500', index !== currentIndex);  
                 });
             }
             images.forEach((_, index) => {
                 const dot = document.createElement('button');
                 dot.classList.add('dot', 'w-2.5', 'h-2.5', 'rounded-full', 'transition-colors', 'duration-300');
                 dot.classList.toggle('bg-white', index === 0);
-                dot.classList.toggle('bg-gray-500', index !== 0); 
+                dot.classList.toggle('bg-gray-500', index !== 0);  
                 dot.addEventListener('click', () => {
                     currentIndex = index;
                     updateGallery();
@@ -656,21 +709,23 @@
                 currentIndex = (currentIndex + 1) % images.length;
                 updateGallery();
             });
-            updateGallery(); 
+            updateGallery();  
         }
 
+        // Yılın otomatik güncellenmesi
         const currentYearSpan = document.getElementById('currentYear');
         if (currentYearSpan) {
             currentYearSpan.textContent = new Date().getFullYear();
         }
 
+        // Smooth Scroll
         document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
                 const targetId = this.getAttribute('href');
                 const targetElement = document.querySelector(targetId);
                 if (targetElement) {
-                    const navbarHeight = document.querySelector('nav').offsetHeight;
+                    const navbarHeight = document.querySelector('nav').offsetHeight + 4; 
                     const elementPosition = targetElement.getBoundingClientRect().top;
                     const offsetPosition = elementPosition + window.pageYOffset - navbarHeight;
                     window.scrollTo({
@@ -681,7 +736,7 @@
             });
         });
 
-        // YENİ: About Me "Read More" Butonu
+        // About Me "Read More" Butonu
         const readMoreBtn = document.getElementById('read-more-btn');
         const aboutMeMore = document.getElementById('about-me-more');
 
@@ -697,8 +752,16 @@
                 }
             });
         }
+        
+        // Scroll Progress Bar
+        const progressBar = document.getElementById('scroll-progress-bar');
+        if (progressBar) {
+            window.addEventListener('scroll', () => {
+                const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
+                const progress = (window.pageYOffset / totalHeight) * 100;
+                progressBar.style.width = progress + '%';
+            });
+        }
     </script>
 </body>
 </html>
-
-
