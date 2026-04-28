@@ -1,0 +1,34 @@
+<svg width="390" height="600" viewBox="0 0 390 600" xmlns="http://www.w3.org/2000/svg">
+  <rect width="390" height="600" fill="#0E0A02"/>
+  <polygon points="390,0 390,600 200,600" fill="#1A1200" opacity="0.8"/>
+  <polygon points="390,0 390,300 280,0" fill="#251A00" opacity="0.5"/>
+  <circle cx="330" cy="280" r="200" fill="none" stroke="#EF9F27" stroke-width="1" opacity="0.1"/>
+  <circle cx="330" cy="280" r="120" fill="none" stroke="#EF9F27" stroke-width="0.5" opacity="0.08"/>
+  <!-- Stars -->
+  <polygon points="310,60 314,74 328,74 317,83 321,97 310,88 299,97 303,83 292,74 306,74" fill="#FAC775" opacity="0.18"/>
+  <polygon points="360,140 363,152 375,152 366,159 369,171 360,164 351,171 354,159 345,152 357,152" fill="#FAC775" opacity="0.15"/>
+  <!-- Tag -->
+  <rect x="30" y="110" width="165" height="32" rx="5" fill="#633806"/>
+  <text x="112" y="132" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="700" fill="#FAC775" letter-spacing="2">ENTREPRENEUR</text>
+  <!-- Title -->
+  <text x="30" y="230" font-family="Arial, sans-serif" font-size="46" font-weight="700" fill="#FFFFFF">Co-Founder &amp;</text>
+  <text x="30" y="285" font-family="Arial, sans-serif" font-size="46" font-weight="700" fill="#FFFFFF">Business</text>
+  <text x="30" y="340" font-family="Arial, sans-serif" font-size="46" font-weight="700" fill="#EF9F27">Owner</text>
+  <text x="30" y="385" font-family="Arial, sans-serif" font-size="22" font-weight="600" fill="#FAC775">3 Ventures · 2 Countries</text>
+  <!-- Cards stacked -->
+  <line x1="30" y1="405" x2="360" y2="405" stroke="#633806" stroke-width="1" opacity="0.5"/>
+  <rect x="30" y="418" width="100" height="70" rx="6" fill="#1A1200" stroke="#633806" stroke-width="1"/>
+  <text x="80" y="445" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="700" fill="#FAC775">Viralight</text>
+  <text x="80" y="462" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#EF9F27">App Store</text>
+
+  <rect x="143" y="418" width="100" height="70" rx="6" fill="#1A1200" stroke="#633806" stroke-width="1"/>
+  <text x="193" y="445" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="700" fill="#FAC775">Fridge Buddy</text>
+  <text x="193" y="462" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#EF9F27">App Store</text>
+
+  <rect x="256" y="418" width="104" height="70" rx="6" fill="#1A1200" stroke="#EF9F27" stroke-width="1.5"/>
+  <text x="308" y="445" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="700" fill="#FAC775">ERYISHOP</text>
+  <text x="308" y="462" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#EF9F27">USA LLC</text>
+  <!-- Bottom -->
+  <rect x="30" y="530" width="70" height="3" rx="2" fill="#EF9F27"/>
+  <text x="115" y="534" font-family="Arial, sans-serif" font-size="13" fill="#FAC775" opacity="0.7">efeeryigit.com</text>
+</svg>

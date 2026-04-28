@@ -1,0 +1,29 @@
+<svg width="390" height="600" viewBox="0 0 390 600" xmlns="http://www.w3.org/2000/svg">
+  <rect width="390" height="600" fill="#0D0D1A"/>
+  <polygon points="0,0 160,0 0,600" fill="#12122A" opacity="0.9"/>
+  <polygon points="0,0 90,0 0,200" fill="#1A1A3A" opacity="0.6"/>
+  <rect x="0" y="0" width="5" height="600" fill="#533AB7"/>
+  <!-- Grid lines -->
+  <line x1="0" y1="200" x2="390" y2="200" stroke="#3C3489" stroke-width="0.5" opacity="0.15"/>
+  <line x1="0" y1="400" x2="390" y2="400" stroke="#3C3489" stroke-width="0.5" opacity="0.15"/>
+  <line x1="130" y1="0" x2="130" y2="600" stroke="#3C3489" stroke-width="0.5" opacity="0.15"/>
+  <line x1="260" y1="0" x2="260" y2="600" stroke="#3C3489" stroke-width="0.5" opacity="0.15"/>
+  <!-- Bar chart decoration -->
+  <rect x="240" y="380" width="28" height="180" rx="3" fill="#7F77DD" opacity="0.18"/>
+  <rect x="278" y="310" width="28" height="250" rx="3" fill="#AFA9EC" opacity="0.18"/>
+  <rect x="316" y="260" width="28" height="300" rx="3" fill="#CECBF6" opacity="0.2"/>
+  <rect x="354" y="330" width="28" height="230" rx="3" fill="#7F77DD" opacity="0.18"/>
+  <!-- Tag -->
+  <rect x="30" y="110" width="195" height="32" rx="4" fill="#3C3489"/>
+  <text x="127" y="132" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="700" fill="#CECBF6" letter-spacing="2">DIGITAL MARKETING</text>
+  <!-- Title -->
+  <text x="30" y="230" font-family="Arial, sans-serif" font-size="54" font-weight="700" fill="#FFFFFF">Performance</text>
+  <text x="30" y="290" font-family="Arial, sans-serif" font-size="54" font-weight="700" fill="#FFFFFF">&amp; Growth</text>
+  <text x="30" y="350" font-family="Arial, sans-serif" font-size="54" font-weight="700" fill="#7F77DD">Strategy</text>
+  <!-- Subtitle -->
+  <text x="30" y="420" font-family="Arial, sans-serif" font-size="15" fill="#AFA9EC" opacity="0.9">SEO · SEM · Meta &amp; Google Ads</text>
+  <text x="30" y="445" font-family="Arial, sans-serif" font-size="15" fill="#AFA9EC" opacity="0.9">Analytics · Campaign Management</text>
+  <!-- Bottom -->
+  <rect x="30" y="530" width="70" height="3" rx="2" fill="#7F77DD"/>
+  <text x="115" y="534" font-family="Arial, sans-serif" font-size="13" fill="#AFA9EC" opacity="0.7">efeeryigit.com</text>
+</svg>

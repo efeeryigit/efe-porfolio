@@ -1,0 +1,33 @@
+<svg width="390" height="600" viewBox="0 0 390 600" xmlns="http://www.w3.org/2000/svg">
+  <rect width="390" height="600" fill="#061220"/>
+  <polygon points="150,600 390,100 390,600" fill="#0A1E35" opacity="0.8"/>
+  <polygon points="220,600 390,200 390,600" fill="#0E2840" opacity="0.5"/>
+  <line x1="0" y1="100" x2="390" y2="100" stroke="#378ADD" stroke-width="0.5" opacity="0.08"/>
+  <line x1="0" y1="500" x2="390" y2="500" stroke="#378ADD" stroke-width="0.5" opacity="0.08"/>
+  <!-- Pulse dot -->
+  <circle cx="30" cy="127" r="9" fill="#1D9E75"/>
+  <circle cx="30" cy="127" r="4" fill="#9FE1CB"/>
+  <!-- Tag -->
+  <rect x="52" y="111" width="175" height="32" rx="4" fill="#0C447C"/>
+  <text x="139" y="133" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="700" fill="#B5D4F4" letter-spacing="2">OPEN TO WORK</text>
+  <!-- Globe decoration -->
+  <g opacity="0.1" stroke="#378ADD" stroke-width="1" fill="none">
+    <circle cx="320" cy="320" r="55"/>
+    <circle cx="320" cy="320" r="90"/>
+    <line x1="265" y1="320" x2="375" y2="320"/>
+    <line x1="320" y1="265" x2="320" y2="375"/>
+    <line x1="281" y1="281" x2="359" y2="359"/>
+    <line x1="281" y1="359" x2="359" y2="281"/>
+  </g>
+  <circle cx="320" cy="320" r="7" fill="#378ADD" opacity="0.25"/>
+  <!-- Title -->
+  <text x="30" y="240" font-family="Arial, sans-serif" font-size="58" font-weight="700" fill="#FFFFFF">Available</text>
+  <text x="30" y="305" font-family="Arial, sans-serif" font-size="58" font-weight="700" fill="#FFFFFF">for Global</text>
+  <text x="30" y="370" font-family="Arial, sans-serif" font-size="52" font-weight="700" fill="#378ADD">Opportunities</text>
+  <!-- Subtitle -->
+  <text x="30" y="425" font-family="Arial, sans-serif" font-size="15" fill="#B5D4F4" opacity="0.85">Digital Marketing · AI-Powered Growth</text>
+  <text x="30" y="450" font-family="Arial, sans-serif" font-size="15" fill="#B5D4F4" opacity="0.85">Performance Campaigns · Istanbul, TR</text>
+  <!-- Bottom -->
+  <rect x="30" y="530" width="70" height="3" rx="2" fill="#378ADD"/>
+  <text x="115" y="534" font-family="Arial, sans-serif" font-size="13" fill="#85B7EB" opacity="0.7">efeeryigit.com</text>
+</svg>
