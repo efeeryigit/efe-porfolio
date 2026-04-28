@@ -785,7 +785,7 @@
 
                 <!-- ── SLIDE 1 — Leadership SVG ── -->
                 <div class="banner-slide active" data-type="svg">
-                    <img src="images/banner_leadership.svg" style="object-fit:fill;" alt="OzU Business Club Leadership">
+                    <img src="images/banner_leadership.svg" data-desktop="images/banner_leadership.svg" data-mobile="images/banner_leadership_mobile.svg" style="object-fit:fill;" alt="OzU Business Club Leadership">
                     <div class="banner-slide-content">
                         <a href="#experience" class="banner-slide-btn">
                             View Experience <i class="fas fa-arrow-right text-xs"></i>
@@ -795,7 +795,7 @@
 
                 <!-- ── SLIDE 2 — Digital Marketing SVG ── -->
                 <div class="banner-slide" data-type="svg">
-                    <img src="images/banner_digital_marketing.svg" style="object-fit:fill;" alt="Digital Marketing">
+                    <img src="images/banner_digital_marketing.svg" data-desktop="images/banner_digital_marketing.svg" data-mobile="images/banner_digital_marketing_mobile.svg" style="object-fit:fill;" alt="Digital Marketing">
                     <div class="banner-slide-content">
                         <a href="#skills" class="banner-slide-btn">
                             See My Skills <i class="fas fa-arrow-right text-xs"></i>
@@ -805,7 +805,7 @@
 
                 <!-- ── SLIDE 3 — Startup SVG ── -->
                 <div class="banner-slide" data-type="svg">
-                    <img src="images/banner_startup.svg" style="object-fit:fill;" alt="Startup & Entrepreneur">
+                    <img src="images/banner_startup.svg" data-desktop="images/banner_startup.svg" data-mobile="images/banner_startup_mobile.svg" style="object-fit:fill;" alt="Startup &amp; Entrepreneur">
                     <div class="banner-slide-content">
                         <a href="https://apps.apple.com/tr/app/viralight-influencer-ko%C3%A7u/id6741738225?l=tr" target="_blank" class="banner-slide-btn">
                             View on App Store <i class="fas fa-external-link-alt text-xs"></i>
@@ -815,7 +815,7 @@
 
                 <!-- ── SLIDE 4 — Open to Work SVG ── -->
                 <div class="banner-slide" data-type="svg">
-                    <img src="images/banner_opentowork.svg" style="object-fit:fill;" alt="Open to Work">
+                    <img src="images/banner_opentowork.svg" data-desktop="images/banner_opentowork.svg" data-mobile="images/banner_opentowork_mobile.svg" style="object-fit:fill;" alt="Open to Work">
                     <div class="banner-slide-content">
                         <a href="#contact" class="banner-slide-btn">
                             Get in Touch <i class="fas fa-arrow-right text-xs"></i>
@@ -1628,24 +1628,11 @@
         // MOBILE SVG SWAP
         // ══════════════════════════════════════════
         (function() {
-            var mobileMap = {
-                'images/banner_leadership.svg': 'images/banner_leadership_mobile.svg',
-                'images/banner_digital_marketing.svg': 'images/banner_digital_marketing_mobile.svg',
-                'images/banner_startup.svg': 'images/banner_startup_mobile.svg',
-                'images/banner_opentowork.svg': 'images/banner_opentowork_mobile.svg'
-            };
             function swapSVGs() {
                 var isMobile = window.innerWidth <= 768;
-                document.querySelectorAll('.banner-slide img').forEach(function(img) {
-                    var src = img.getAttribute('data-desktop') || img.src.split('/').slice(-2).join('/');
-                    // Normalize src to relative path
-                    var rel = img.src.replace(window.location.href.replace(/[^/]*$/, ''), '');
-                    if (!img.getAttribute('data-desktop')) {
-                        img.setAttribute('data-desktop', rel);
-                        img.setAttribute('data-mobile', mobileMap[rel] || rel);
-                    }
+                document.querySelectorAll('.banner-slide img[data-desktop]').forEach(function(img) {
                     var target = isMobile ? img.getAttribute('data-mobile') : img.getAttribute('data-desktop');
-                    if (img.src.indexOf(target) === -1) img.src = target;
+                    if (img.getAttribute('src') !== target) img.setAttribute('src', target);
                 });
             }
             swapSVGs();
