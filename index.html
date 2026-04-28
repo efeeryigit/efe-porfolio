@@ -5,102 +5,399 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Efe Eryiğit | Portfolio</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
     <style>
         /* Base Colors */
         :root {
-            --vibrant-emerald: #2ECC71; /* Daha Canlı Zümrüt Yeşili */
-            --charcoal-black: #1C1C1C; /* Kömür Siyahı */
-            --ash-gray: #B0B0B0;       /* Gri Tonu (Yazılar/İkonlar) */
-            --light-gray-bg: #2a2a2a;  /* Kartlar ve bazı bölüm arkaplanları için biraz daha açık kömür */
-            --text-light: #E5E7EB;     /* Koyu arkaplan üzerinde açık renkli ana metin (Tailwind gray-200) */
-            --text-medium: #B0B0B0;    /* İkincil metinler, açıklamalar için (Ash Gray) */
+            --vibrant-emerald: #2ECC71;
+            --emerald-glow: rgba(46, 204, 113, 0.15);
+            --charcoal-black: #141414;
+            --ash-gray: #B0B0B0;
+            --light-gray-bg: #1f1f1f;
+            --card-bg: #252525;
+            --text-light: #F0F0F0;
+            --text-medium: #9A9A9A;
+            --border-subtle: rgba(255,255,255,0.06);
         }
 
         body {
-            font-family: 'Inter', sans-serif;
+            font-family: 'DM Sans', sans-serif;
             scroll-behavior: smooth;
-            background-color: var(--charcoal-black);  
-            color: var(--text-light);          
+            background-color: var(--charcoal-black);
+            color: var(--text-light);
         }
-        .modal {
-            transition: opacity 0.3s ease, visibility 0.3s ease;
+
+        h1, h2, h3, h4, nav a, .button-cv {
+            font-family: 'Syne', sans-serif;
         }
-        .modal-content {
-            transition: transform 0.3s ease;
+
+        /* ── Scroll progress ── */
+        .modal { transition: opacity 0.3s ease, visibility 0.3s ease; }
+        .modal-content { transition: transform 0.3s ease; }
+
+        /* ── Section title underline ── */
+        .section-title {
+            position: relative;
+            display: inline-block;
         }
         .section-title::after {
             content: '';
             display: block;
-            width: 60px;
+            width: 48px;
             height: 3px;
-            background-color: var(--vibrant-emerald);  
-            margin-top: 8px;
+            background: linear-gradient(90deg, var(--vibrant-emerald), transparent);
+            margin-top: 10px;
             border-radius: 2px;
         }
-        nav a {
-            transition: color 0.3s ease;
-        }
-        nav a:hover {
-            color: var(--vibrant-emerald);  
-        }
-        .experience-card, .hobby-card, .blog-card { 
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            /* YENİ: Kartların eşit yükseklikte olmasını sağlamak için */
+
+        /* ── Nav ── */
+        nav a { transition: color 0.3s ease; }
+        nav a:hover { color: var(--vibrant-emerald); }
+
+        /* ── Cards ── */
+        .experience-card, .hobby-card, .blog-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
+            border: 1px solid var(--border-subtle);
         }
-        .experience-card:hover, .hobby-card:hover, .blog-card:hover {  
-            transform: translateY(-5px);
-            box-shadow: 0 10px 15px -3px rgba(46, 204, 113, 0.2), 0 4px 6px -2px rgba(46, 204, 113, 0.1);  
+        .experience-card:hover, .hobby-card:hover, .blog-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 40px -10px rgba(46, 204, 113, 0.18);
+            border-color: rgba(46, 204, 113, 0.3);
         }
+
+        /* ── Hero ── */
         .hero-bg {
-             background-color: #111111;  
+            background-color: #0d0d0d;
+            position: relative;
+            overflow: hidden;
         }
-        .card-bg {
-            background-color: var(--light-gray-bg);  
+        .hero-bg::before {
+            content: '';
+            position: absolute;
+            top: -200px; right: -200px;
+            width: 600px; height: 600px;
+            background: radial-gradient(circle, rgba(46,204,113,0.07) 0%, transparent 70%);
+            pointer-events: none;
         }
-        .text-accent {
-            color: var(--vibrant-emerald);  
+        .hero-bg::after {
+            content: '';
+            position: absolute;
+            bottom: -100px; left: -100px;
+            width: 400px; height: 400px;
+            background: radial-gradient(circle, rgba(46,204,113,0.04) 0%, transparent 70%);
+            pointer-events: none;
         }
-        .button-cv { 
+
+        /* ── Profile image ring ── */
+        .profile-ring {
+            position: relative;
+            display: inline-block;
+        }
+        .profile-ring::before {
+            content: '';
+            position: absolute;
+            inset: -4px;
+            border-radius: 50%;
+            background: conic-gradient(var(--vibrant-emerald) 0%, transparent 60%, var(--vibrant-emerald) 100%);
+            animation: spin 8s linear infinite;
+            opacity: 0.6;
+        }
+        @keyframes spin { to { transform: rotate(360deg); } }
+
+        /* ── Utility classes ── */
+        .card-bg { background-color: var(--light-gray-bg); }
+        .text-accent { color: var(--vibrant-emerald); }
+        .button-cv {
             background-color: var(--vibrant-emerald);
             color: var(--charcoal-black);
-            transition: background-color 0.3s ease, transform 0.2s ease;
-            padding: 0.75rem 1.5rem;
+            transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+            padding: 0.75rem 1.75rem;
             border-radius: 0.5rem;
-            font-weight: 500;
+            font-weight: 600;
             display: inline-flex;
             align-items: center;
             text-decoration: none;
+            letter-spacing: 0.02em;
         }
         .button-cv:hover {
-            background-color: #27AE60; 
+            background-color: #27AE60;
             transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(46,204,113,0.3);
         }
-        .button-cv i {
-            margin-right: 0.5rem;
-        }
-        .modal-backdrop-color {
-            background-color: rgba(0, 0, 0, 0.85);  
-        }
-        .modal-content-bg {
-             background-color: var(--light-gray-bg);  
-        }
-        
-        /* Tailwind Direktifleri ile Renk Uygulamaları */
+        .button-cv i { margin-right: 0.5rem; }
+
+        .modal-backdrop-color { background-color: rgba(0, 0, 0, 0.88); }
+        .modal-content-bg { background-color: var(--light-gray-bg); }
+
         .bg-primary { background-color: var(--charcoal-black); }
         .bg-secondary { background-color: var(--light-gray-bg); }
-        .bg-hero { background-color: #111111; }  
+        .bg-hero { background-color: #0d0d0d; }
         .text-primary-light { color: var(--text-light); }
         .text-secondary-medium { color: var(--text-medium); }
-        .text-highlight-accent { color: var(--vibrant-emerald); }  
-        .border-highlight-accent { border-color: var(--vibrant-emerald); }  
-        .hover-text-highlight-accent:hover { color: var(--vibrant-emerald); }  
-        .shadow-custom-accent { box-shadow: 0 10px 15px -3px rgba(46, 204, 113, 0.1), 0 4px 6px -2px rgba(46, 204, 113, 0.05); }  
+        .text-highlight-accent { color: var(--vibrant-emerald); }
+        .border-highlight-accent { border-color: var(--vibrant-emerald); }
+        .hover-text-highlight-accent:hover { color: var(--vibrant-emerald); }
+        .shadow-custom-accent { box-shadow: 0 10px 30px -8px rgba(46, 204, 113, 0.12); }
 
+        /* ══════════════════════════════════════════
+           BANNER SLIDER
+        ══════════════════════════════════════════ */
+        #banner-section {
+            position: relative;
+            background: #0a0a0a;
+            overflow: hidden;
+        }
+
+        .banner-slider-wrapper {
+            position: relative;
+            width: 100%;
+            height: 520px;
+            overflow: hidden;
+        }
+
+        @media (max-width: 768px) {
+            .banner-slider-wrapper { height: 320px; }
+        }
+
+        .banner-track {
+            display: flex;
+            height: 100%;
+            transition: transform 0.7s cubic-bezier(0.77, 0, 0.175, 1);
+            will-change: transform;
+        }
+
+        .banner-slide {
+            position: relative;
+            min-width: 100%;
+            height: 100%;
+            overflow: hidden;
+            flex-shrink: 0;
+        }
+
+        /* Image slides */
+        .banner-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 6s ease;
+        }
+        .banner-slide.active img {
+            transform: scale(1.04);
+        }
+
+        /* Video slides */
+        .banner-slide video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* Overlay gradient */
+        .banner-slide-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(
+                to right,
+                rgba(0,0,0,0.72) 0%,
+                rgba(0,0,0,0.3) 50%,
+                rgba(0,0,0,0.1) 100%
+            );
+            z-index: 2;
+        }
+
+        /* Slide content (text + button) */
+        .banner-slide-content {
+            position: absolute;
+            bottom: 0; left: 0; right: 0;
+            z-index: 3;
+            padding: 3rem 4rem;
+            background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 100%);
+        }
+
+        @media (max-width: 768px) {
+            .banner-slide-content { padding: 2rem 1.5rem; }
+        }
+
+        .banner-slide-tag {
+            display: inline-block;
+            font-family: 'Syne', sans-serif;
+            font-size: 0.65rem;
+            font-weight: 700;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: var(--vibrant-emerald);
+            border: 1px solid rgba(46,204,113,0.4);
+            padding: 0.25rem 0.75rem;
+            border-radius: 2px;
+            margin-bottom: 0.75rem;
+            opacity: 0;
+            transform: translateY(16px);
+            transition: opacity 0.5s 0.1s ease, transform 0.5s 0.1s ease;
+        }
+        .banner-slide-title {
+            font-family: 'Syne', sans-serif;
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: #fff;
+            line-height: 1.2;
+            margin-bottom: 0.5rem;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.5s 0.25s ease, transform 0.5s 0.25s ease;
+        }
+        @media (max-width: 768px) {
+            .banner-slide-title { font-size: 1.4rem; }
+        }
+        .banner-slide-subtitle {
+            font-size: 0.95rem;
+            color: rgba(255,255,255,0.7);
+            margin-bottom: 1.25rem;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.5s 0.35s ease, transform 0.5s 0.35s ease;
+        }
+        .banner-slide-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-family: 'Syne', sans-serif;
+            font-size: 0.82rem;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            color: #0d0d0d;
+            background: var(--vibrant-emerald);
+            padding: 0.6rem 1.4rem;
+            border-radius: 4px;
+            text-decoration: none;
+            transition: background 0.3s, transform 0.2s, box-shadow 0.3s;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        .banner-slide-btn:hover {
+            background: #27AE60;
+            transform: translateY(-2px) !important;
+            box-shadow: 0 8px 24px rgba(46,204,113,0.35);
+        }
+
+        /* Animate in when slide is active */
+        .banner-slide.active .banner-slide-tag,
+        .banner-slide.active .banner-slide-title,
+        .banner-slide.active .banner-slide-subtitle,
+        .banner-slide.active .banner-slide-btn {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ── Nav arrows ── */
+        .banner-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 10;
+            width: 44px; height: 44px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.08);
+            border: 1px solid rgba(255,255,255,0.15);
+            color: white;
+            display: flex; align-items: center; justify-content: center;
+            cursor: pointer;
+            transition: background 0.3s, border-color 0.3s, transform 0.2s;
+            backdrop-filter: blur(6px);
+        }
+        .banner-arrow:hover {
+            background: rgba(46,204,113,0.2);
+            border-color: rgba(46,204,113,0.5);
+        }
+        .banner-arrow-prev { left: 1.5rem; }
+        .banner-arrow-next { right: 1.5rem; }
+
+        /* ── Dots ── */
+        .banner-dots {
+            position: absolute;
+            bottom: 1.25rem;
+            right: 2rem;
+            z-index: 10;
+            display: flex;
+            gap: 0.5rem;
+            align-items: center;
+        }
+        .banner-dot {
+            width: 6px; height: 6px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.3);
+            cursor: pointer;
+            transition: background 0.3s, width 0.3s, border-radius 0.3s;
+        }
+        .banner-dot.active {
+            background: var(--vibrant-emerald);
+            width: 22px;
+            border-radius: 3px;
+        }
+
+        /* ── Progress bar inside banner ── */
+        .banner-progress {
+            position: absolute;
+            bottom: 0; left: 0;
+            height: 2px;
+            background: var(--vibrant-emerald);
+            z-index: 10;
+            transition: width linear;
+            opacity: 0.7;
+        }
+
+        /* ── Video badge ── */
+        .video-badge {
+            position: absolute;
+            top: 1.2rem; right: 1.2rem;
+            z-index: 5;
+            background: rgba(0,0,0,0.5);
+            border: 1px solid rgba(255,255,255,0.2);
+            color: white;
+            font-size: 0.7rem;
+            font-family: 'Syne', sans-serif;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            padding: 0.3rem 0.7rem;
+            border-radius: 3px;
+            backdrop-filter: blur(4px);
+            display: flex; align-items: center; gap: 0.4rem;
+        }
+        .video-badge::before {
+            content: '';
+            width: 6px; height: 6px;
+            border-radius: 50%;
+            background: #ff4444;
+            animation: blink 1.2s ease infinite;
+        }
+        @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.3} }
+
+        /* ── Fade-in animation for sections ── */
+        .fade-up {
+            opacity: 0;
+            transform: translateY(28px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+        .fade-up.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ── Skills pill styling ── */
+        .skill-pill {
+            background: var(--card-bg);
+            border: 1px solid var(--border-subtle);
+            transition: border-color 0.3s, background 0.3s;
+        }
+        .skill-pill:hover {
+            border-color: rgba(46,204,113,0.4);
+            background: rgba(46,204,113,0.06);
+        }
     </style>
 </head>
 <body class="antialiased bg-primary text-primary-light">
@@ -109,9 +406,9 @@
         <div id="scroll-progress-bar" class="h-full" style="width: 0%; background-color: var(--vibrant-emerald); transition: width 0.05s ease-out;"></div>
     </div>
 
-    <nav class="bg-secondary shadow-xl fixed w-full z-50 top-1">
+    <nav class="shadow-xl fixed w-full z-50 top-1" style="background:rgba(20,20,20,0.95); backdrop-filter:blur(12px); border-bottom:1px solid rgba(255,255,255,0.06);">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="index.html" class="text-2xl font-bold text-highlight-accent">Efe Eryiğit</a>
+            <a href="index.html" class="text-2xl font-bold text-highlight-accent tracking-tight" style="font-family:'Syne',sans-serif;">Efe Eryiğit</a>
             <div class="hidden md:flex space-x-6">
                 <a href="#about" class="text-secondary-medium hover-text-highlight-accent">About</a>
                 <a href="#experience" class="text-secondary-medium hover-text-highlight-accent">Experience</a>
@@ -138,17 +435,118 @@
         </div>
     </nav>
 
-    <header id="home" class="bg-hero text-primary-light pt-[132px] pb-20 md:pt-48 md:pb-32 flex flex-col md:flex-row items-center justify-center text-center md:text-left">
+    <header id="home" class="hero-bg text-primary-light pt-[132px] pb-20 md:pt-48 md:pb-32 flex flex-col md:flex-row items-center justify-center text-center md:text-left">
         <div class="container mx-auto px-6 flex flex-col md:flex-row items-center">
-            <div class="md:w-1/3 mb-8 md:mb-0 md:mr-12 flex justify-center">
-                <img src="images/efe_eryigit_linkedin_foto.jpg" alt="Basri Efe Eryiğit Portre Fotoğrafı" class="rounded-full shadow-2xl w-48 h-48 md:w-56 md:h-56 object-cover border-4 border-highlight-accent">
+            <div class="md:w-1/3 mb-8 md:mb-0 md:mr-16 flex justify-center">
+                <div class="profile-ring">
+                    <img src="images/efe_eryigit_linkedin_foto.jpg" alt="Basri Efe Eryiğit Portre Fotoğrafı" class="rounded-full shadow-2xl w-48 h-48 md:w-60 md:h-60 object-cover relative z-10" style="border: 3px solid #141414;">
+                </div>
             </div>
             <div class="md:w-2/3">
-                <h1 class="text-4xl md:text-6xl font-bold mb-4 leading-tight">Basri Efe Eryiğit</h1>
-                <p class="text-xl md:text-2xl font-light text-secondary-medium">Management Information Systems Student | Interest in the digital world</p>
+                <span class="inline-block text-xs font-bold tracking-[0.2em] uppercase text-highlight-accent mb-3 opacity-80">Portfolio</span>
+                <h1 class="text-4xl md:text-6xl font-bold mb-4 leading-tight">Basri Efe<br><span class="text-highlight-accent">Eryiğit</span></h1>
+                <p class="text-lg md:text-xl font-light text-secondary-medium mb-8 max-w-lg">Management Information Systems Student — passionate about digital marketing, growth strategy & the digital world.</p>
+                <div class="flex flex-wrap gap-3 justify-center md:justify-start">
+                    <a href="#about" class="button-cv"><i class="fas fa-user"></i>About Me</a>
+                    <a href="#contact" class="inline-flex items-center gap-2 px-6 py-3 rounded-lg border font-semibold text-sm transition-all duration-300 hover:border-emerald-400 hover:text-highlight-accent" style="border-color:rgba(255,255,255,0.15); color: var(--text-medium); font-family: 'Syne', sans-serif;">
+                        <i class="fas fa-envelope text-xs"></i> Contact
+                    </a>
+                </div>
             </div>
         </div>
     </header>
+
+    <!-- ══════════════════════════════════════
+         BANNER SLIDER — Fotoğraf & Video
+    ══════════════════════════════════════ -->
+    <section id="banner-section">
+        <!-- Üst başlık çizgisi -->
+        <div class="flex items-center justify-between px-8 py-4" style="background:#0a0a0a; border-bottom:1px solid rgba(255,255,255,0.05);">
+            <span style="font-family:'Syne',sans-serif; font-size:0.7rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--text-medium);">Featured</span>
+            <span id="banner-counter" style="font-family:'Syne',sans-serif; font-size:0.7rem; color:var(--vibrant-emerald);">01 / 04</span>
+        </div>
+
+        <div class="banner-slider-wrapper">
+            <div class="banner-track" id="bannerTrack">
+
+                <!-- ── SLIDE 1 — Fotoğraf ── -->
+                <div class="banner-slide active" data-type="image">
+                    <!-- Kendi fotoğrafınızı buraya koyun: src="images/banner1.jpg" -->
+                    <img src="images/efe_eryigit_business.jpg" alt="OzU Business Club">
+                    <div class="banner-slide-overlay"></div>
+                    <div class="banner-slide-content">
+                        <div class="banner-slide-tag">Leadership</div>
+                        <h2 class="banner-slide-title">OzU Business Club<br>Presidency</h2>
+                        <p class="banner-slide-subtitle">Leading 100+ people across 6 departments, serving 3000 members.</p>
+                        <a href="#experience" class="banner-slide-btn">
+                            View Experience <i class="fas fa-arrow-right text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- ── SLIDE 2 — Fotoğraf ── -->
+                <div class="banner-slide" data-type="image">
+                    <img src="images/efe_eryigit_marketing_week.jpg" alt="Marketing Week">
+                    <div class="banner-slide-overlay"></div>
+                    <div class="banner-slide-content">
+                        <div class="banner-slide-tag">Digital Marketing</div>
+                        <h2 class="banner-slide-title">Marketing &amp;<br>Growth Strategy</h2>
+                        <p class="banner-slide-subtitle">SEO, SEM, campaign management and performance analytics.</p>
+                        <a href="#skills" class="banner-slide-btn">
+                            See My Skills <i class="fas fa-arrow-right text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- ── SLIDE 3 — Video (src kısmını kendi videonuzla değiştirin) ── -->
+                <div class="banner-slide" data-type="video">
+                    <!-- Video için: src="videos/banner_video.mp4" -->
+                    <!-- Şimdilik fotoğraf ile placeholder: kendi videonuzu ekleyin -->
+                    <img src="images/efeeryigit_hiq_etkinlik.jpg" alt="Video Banner Placeholder">
+                    <div class="video-badge">VIDEO</div>
+                    <div class="banner-slide-overlay"></div>
+                    <div class="banner-slide-content">
+                        <div class="banner-slide-tag">Startup</div>
+                        <h2 class="banner-slide-title">Co-Founder,<br>Viralight App</h2>
+                        <p class="banner-slide-subtitle">AI-powered influencer management platform on the App Store.</p>
+                        <a href="https://apps.apple.com/tr/app/viralight-influencer-koçu/id6741738225?l=tr" target="_blank" class="banner-slide-btn">
+                            View on App Store <i class="fas fa-external-link-alt text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- ── SLIDE 4 — Fotoğraf ── -->
+                <div class="banner-slide" data-type="image">
+                    <img src="images/efe_eryigit_linkedin_foto.jpg" alt="Efe Eryigit">
+                    <div class="banner-slide-overlay"></div>
+                    <div class="banner-slide-content">
+                        <div class="banner-slide-tag">Available for Work</div>
+                        <h2 class="banner-slide-title">Open to<br>Opportunities</h2>
+                        <p class="banner-slide-subtitle">Digital marketing, growth strategies and brand development roles.</p>
+                        <a href="#contact" class="banner-slide-btn">
+                            Get in Touch <i class="fas fa-arrow-right text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Arrows -->
+            <button class="banner-arrow banner-arrow-prev" id="bannerPrev" aria-label="Previous slide">
+                <i class="fas fa-chevron-left text-sm"></i>
+            </button>
+            <button class="banner-arrow banner-arrow-next" id="bannerNext" aria-label="Next slide">
+                <i class="fas fa-chevron-right text-sm"></i>
+            </button>
+
+            <!-- Dots -->
+            <div class="banner-dots" id="bannerDots"></div>
+
+            <!-- Progress bar -->
+            <div class="banner-progress" id="bannerProgress" style="width:0%"></div>
+        </div>
+    </section>
+    <!-- ══════════════════════════════ END BANNER ══════════════════════════════ -->
 
     <section id="about" class="py-16 md:py-24 bg-secondary">
         <div class="container mx-auto px-6">
@@ -613,163 +1011,358 @@
     </div>
 
     <script>
-        // Navigation Toggle for Mobile
+        // ── Navigation Toggle
         const navToggle = document.getElementById('nav-toggle');
         const mobileNav = document.getElementById('mobile-nav');
         if (navToggle && mobileNav) {
-            navToggle.addEventListener('click', () => {
-                mobileNav.classList.toggle('hidden');
-            });
-            mobileNav.querySelectorAll('a').forEach(link => {
-                link.addEventListener('click', () => {
-                    mobileNav.classList.add('hidden');
-                });
-            });
+            navToggle.addEventListener('click', () => mobileNav.classList.toggle('hidden'));
+            mobileNav.querySelectorAll('a').forEach(l => l.addEventListener('click', () => mobileNav.classList.add('hidden')));
         }
 
-        // Modal Functionality
+        // ── Modal
         const modalTriggers = document.querySelectorAll('[data-modal-target]');
         modalTriggers.forEach(trigger => {
             trigger.addEventListener('click', () => {
-                const modalId = trigger.dataset.modalTarget;
-                const modal = document.getElementById(modalId);
+                const modal = document.getElementById(trigger.dataset.modalTarget);
                 if (modal) {
                     openModal(modal);
-                    if (modalId === 'ozuBusinessModal') {
+                    if (trigger.dataset.modalTarget === 'ozuBusinessModal') {
                         initializeGallery(modal.querySelector('#galleryContainerOzu'), modal.querySelector('#gallerySliderOzu'), modal.querySelectorAll('.gallery-image'), modal.querySelector('.gallery-prev'), modal.querySelector('.gallery-next'), modal.querySelector('.gallery-dots'));
                     }
                 }
             });
         });
-
-        const closeButtons = document.querySelectorAll('.close-modal-button');
-        closeButtons.forEach(button => {
-            button.addEventListener('click', () => {
-                const modal = button.closest('.modal');
-                if (modal) {
-                    closeModal(modal);
-                }
-            });
+        document.querySelectorAll('.close-modal-button').forEach(btn => {
+            btn.addEventListener('click', () => { const m = btn.closest('.modal'); if (m) closeModal(m); });
         });
-
-        const allModals = document.querySelectorAll('.modal');
-        allModals.forEach(modal => {
-            modal.addEventListener('click', (event) => {
-                if (event.target === modal) {
-                    closeModal(modal);
-                }
-            });
+        document.querySelectorAll('.modal').forEach(modal => {
+            modal.addEventListener('click', e => { if (e.target === modal) closeModal(modal); });
         });
-        
         function openModal(modal) {
-            if (modal) {
-                modal.classList.remove('opacity-0', 'invisible');
-                modal.classList.add('opacity-100', 'visible');
-                modal.querySelector('.modal-content').classList.remove('scale-95');
-                modal.querySelector('.modal-content').classList.add('scale-100');
-                document.body.style.overflow = 'hidden';
-            }
+            modal.classList.remove('opacity-0','invisible');
+            modal.classList.add('opacity-100','visible');
+            const mc = modal.querySelector('.modal-content');
+            if (mc) { mc.classList.remove('scale-95'); mc.classList.add('scale-100'); }
+            document.body.style.overflow = 'hidden';
         }
-
         function closeModal(modal) {
-            if (modal) {
-                modal.classList.add('opacity-0');
-                modal.querySelector('.modal-content').classList.add('scale-95');
-                setTimeout(() => {
-                    modal.classList.add('invisible');
-                    modal.classList.remove('opacity-100', 'visible');
-                    modal.querySelector('.modal-content').classList.remove('scale-100');
-                    document.body.style.overflow = 'auto';
-                }, 300);
-            }
+            modal.classList.add('opacity-0');
+            const mc = modal.querySelector('.modal-content');
+            if (mc) { mc.classList.add('scale-95'); mc.classList.remove('scale-100'); }
+            setTimeout(() => {
+                modal.classList.add('invisible');
+                modal.classList.remove('opacity-100','visible');
+                document.body.style.overflow = 'auto';
+            }, 300);
         }
-        
         function initializeGallery(container, slider, images, prevBtn, nextBtn, dotsContainer) {
-            if (!slider || !images || images.length === 0 || !prevBtn || !nextBtn || !dotsContainer) {
-                return;
-            }
-            let currentIndex = 0;
-            dotsContainer.innerHTML = '';  
-            function updateGallery() {
-                slider.style.transform = `translateX(-${currentIndex * 100}%)`;
-                const dots = dotsContainer.querySelectorAll('.dot');
-                dots.forEach((dot, index) => {
-                    dot.classList.toggle('bg-white', index === currentIndex);  
-                    dot.classList.toggle('bg-gray-500', index !== currentIndex);  
+            if (!slider || !images || images.length === 0) return;
+            let idx = 0;
+            dotsContainer.innerHTML = '';
+            function update() {
+                slider.style.transform = 'translateX(-' + (idx * 100) + '%)';
+                dotsContainer.querySelectorAll('.dot').forEach((d,i) => {
+                    d.classList.toggle('bg-white', i === idx);
+                    d.classList.toggle('bg-gray-500', i !== idx);
                 });
             }
-            images.forEach((_, index) => {
-                const dot = document.createElement('button');
-                dot.classList.add('dot', 'w-2.5', 'h-2.5', 'rounded-full', 'transition-colors', 'duration-300');
-                dot.classList.toggle('bg-white', index === 0);
-                dot.classList.toggle('bg-gray-500', index !== 0);  
-                dot.addEventListener('click', () => {
-                    currentIndex = index;
-                    updateGallery();
+            images.forEach((_,i) => {
+                const d = document.createElement('button');
+                d.className = 'dot w-2.5 h-2.5 rounded-full transition-colors duration-300';
+                d.classList.add(i === 0 ? 'bg-white' : 'bg-gray-500');
+                d.addEventListener('click', () => { idx = i; update(); });
+                dotsContainer.appendChild(d);
+            });
+            if (prevBtn) prevBtn.addEventListener('click', () => { idx = (idx - 1 + images.length) % images.length; update(); });
+            if (nextBtn) nextBtn.addEventListener('click', () => { idx = (idx + 1) % images.length; update(); });
+            update();
+        }
+
+        // ════════════════════════════════════════════
+        // BANNER SLIDER
+        // ════════════════════════════════════════════
+        (function initBanner() {
+            const track    = document.getElementById('bannerTrack');
+            const dotsWrap = document.getElementById('bannerDots');
+            const thumbsWrap = document.getElementById('bannerThumbs');
+            const prevBtn  = document.getElementById('bannerPrev');
+            const nextBtn  = document.getElementById('bannerNext');
+            const counter  = document.getElementById('bannerCounter');
+            const progress = document.getElementById('bannerProgress');
+
+            if (!track || !dotsWrap) return;
+            const slides = Array.from(track.querySelectorAll('.banner-slide'));
+            const total  = slides.length;
+            if (total === 0) return;
+
+            let current   = 0;
+            let autoTimer = null;
+            let progTimer = null;
+            let progVal   = 0;
+            const DURATION = 5000;
+
+            // Build dots
+            slides.forEach((_, i) => {
+                const d = document.createElement('button');
+                d.className = 'banner-dot' + (i === 0 ? ' active' : '');
+                d.dataset.index = i;
+                d.setAttribute('aria-label', 'Slide ' + (i+1));
+                d.addEventListener('click', () => { stopAuto(); goTo(i); startAuto(); });
+                dotsWrap.appendChild(d);
+            });
+
+            // Build thumbnails
+            if (thumbsWrap) {
+                slides.forEach((slide, i) => {
+                    const th = document.createElement('div');
+                    th.className = 'banner-thumb' + (i === 0 ? ' active' : '');
+                    th.dataset.index = i;
+                    const type = slide.dataset.type;
+                    const img = slide.querySelector('img');
+                    if (img) {
+                        const i2 = document.createElement('img');
+                        i2.src = img.src; i2.alt = img.alt || '';
+                        th.appendChild(i2);
+                    }
+                    const icon = document.createElement('div');
+                    icon.className = 'thumb-icon';
+                    icon.innerHTML = type === 'video' ? '&#9654;' : '&#128269;';
+                    th.appendChild(icon);
+                    th.addEventListener('click', () => { stopAuto(); goTo(i); startAuto(); });
+                    thumbsWrap.appendChild(th);
                 });
-                dotsContainer.appendChild(dot);
-            });
-            prevBtn.addEventListener('click', () => {
-                currentIndex = (currentIndex - 1 + images.length) % images.length;
-                updateGallery();
-            });
-            nextBtn.addEventListener('click', () => {
-                currentIndex = (currentIndex + 1) % images.length;
-                updateGallery();
-            });
-            updateGallery();  
-        }
+            }
 
-        // Yılın otomatik güncellenmesi
-        const currentYearSpan = document.getElementById('currentYear');
-        if (currentYearSpan) {
-            currentYearSpan.textContent = new Date().getFullYear();
-        }
+            function goTo(index) {
+                slides[current].classList.remove('active');
+                const oldVid = slides[current].querySelector('video');
+                if (oldVid) oldVid.pause();
 
-        // Smooth Scroll
-        document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
+                current = (index + total) % total;
+                track.style.transform = 'translateX(-' + (current * 100) + '%)';
+                slides[current].classList.add('active');
+
+                const newVid = slides[current].querySelector('video');
+                if (newVid) { newVid.currentTime = 0; newVid.play().catch(function(){}); }
+
+                dotsWrap.querySelectorAll('.banner-dot').forEach((d,i) => d.classList.toggle('active', i === current));
+                if (thumbsWrap) thumbsWrap.querySelectorAll('.banner-thumb').forEach((t,i) => t.classList.toggle('active', i === current));
+                if (counter) counter.textContent = String(current + 1).padStart(2,'0') + ' / ' + String(total).padStart(2,'0');
+                resetProgress();
+            }
+
+            function resetProgress() {
+                clearInterval(progTimer);
+                progVal = 0;
+                if (progress) progress.style.width = '0%';
+                progTimer = setInterval(function() {
+                    progVal += 100 / (DURATION / 100);
+                    if (progress) progress.style.width = Math.min(progVal, 100) + '%';
+                    if (progVal >= 100) clearInterval(progTimer);
+                }, 100);
+            }
+
+            function startAuto() {
+                clearInterval(autoTimer);
+                autoTimer = setInterval(function() { goTo(current + 1); }, DURATION);
+            }
+            function stopAuto() {
+                clearInterval(autoTimer);
+                clearInterval(progTimer);
+            }
+
+            if (prevBtn) prevBtn.addEventListener('click', function() { stopAuto(); goTo(current - 1); startAuto(); });
+            if (nextBtn) nextBtn.addEventListener('click', function() { stopAuto(); goTo(current + 1); startAuto(); });
+
+            // Swipe
+            var tx = 0;
+            track.addEventListener('touchstart', function(e) { tx = e.touches[0].clientX; }, { passive: true });
+            track.addEventListener('touchend', function(e) {
+                var diff = tx - e.changedTouches[0].clientX;
+                if (Math.abs(diff) > 40) { stopAuto(); goTo(current + (diff > 0 ? 1 : -1)); startAuto(); }
+            });
+
+            // Keyboard
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'ArrowLeft') { stopAuto(); goTo(current - 1); startAuto(); }
+                if (e.key === 'ArrowRight') { stopAuto(); goTo(current + 1); startAuto(); }
+            });
+
+            goTo(0);
+            startAuto();
+        })();
+
+        // ── Scroll reveal for sections
+        var revObs = new IntersectionObserver(function(entries) {
+            entries.forEach(function(e) {
+                if (e.isIntersecting) {
+                    e.target.style.opacity = '1';
+                    e.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, { threshold: 0.06 });
+        document.querySelectorAll('section').forEach(function(el) {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(24px)';
+            el.style.transition = 'opacity 0.65s ease, transform 0.65s ease';
+            revObs.observe(el);
+        });
+
+        // ── Current year
+        var cy = document.getElementById('currentYear');
+        if (cy) cy.textContent = new Date().getFullYear();
+
+        // ── Smooth scroll
+        document.querySelectorAll('nav a[href^="#"]').forEach(function(anchor) {
+            anchor.addEventListener('click', function(e) {
                 e.preventDefault();
-                const targetId = this.getAttribute('href');
-                const targetElement = document.querySelector(targetId);
-                if (targetElement) {
-                    const navbarHeight = document.querySelector('nav').offsetHeight + 4; 
-                    const elementPosition = targetElement.getBoundingClientRect().top;
-                    const offsetPosition = elementPosition + window.pageYOffset - navbarHeight;
-                    window.scrollTo({
-                        top: offsetPosition,
-                        behavior: 'smooth'
-                    });
+                var target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    var off = document.querySelector('nav').offsetHeight + 4;
+                    window.scrollTo({ top: target.getBoundingClientRect().top + window.pageYOffset - off, behavior: 'smooth' });
                 }
             });
         });
 
-        // About Me "Read More" Butonu
-        const readMoreBtn = document.getElementById('read-more-btn');
-        const aboutMeMore = document.getElementById('about-me-more');
+        // ── Read more
+        var rmBtn = document.getElementById('read-more-btn');
+        var rmMore = document.getElementById('about-me-more');
+        if (rmBtn && rmMore) {
+            rmBtn.addEventListener('click', function() {
+                var hidden = rmMore.classList.contains('hidden');
+                rmMore.classList.toggle('hidden');
+                rmBtn.textContent = hidden ? 'Read Less...' : 'Read More...';
+            });
+        }
 
-        if(readMoreBtn && aboutMeMore) {
-            readMoreBtn.addEventListener('click', () => {
-                const isHidden = aboutMeMore.classList.contains('hidden');
-                if(isHidden) {
-                    aboutMeMore.classList.remove('hidden');
-                    readMoreBtn.textContent = 'Read Less...';
-                } else {
-                    aboutMeMore.classList.add('hidden');
-                    readMoreBtn.textContent = 'Read More...';
+        // ── Scroll progress bar
+        var progressBar = document.getElementById('scroll-progress-bar');
+        if (progressBar) {
+            window.addEventListener('scroll', function() {
+                var total = document.documentElement.scrollHeight - window.innerHeight;
+                progressBar.style.width = (window.pageYOffset / total * 100) + '%';
+            });
+        }
+        // ══════════════════════════════════════════
+        // BANNER SLIDER
+        // ══════════════════════════════════════════
+        (function() {
+            const track      = document.getElementById('bannerTrack');
+            const slides     = document.querySelectorAll('.banner-slide');
+            const dotsWrap   = document.getElementById('bannerDots');
+            const prevBtn    = document.getElementById('bannerPrev');
+            const nextBtn    = document.getElementById('bannerNext');
+            const counter    = document.getElementById('banner-counter');
+            const progress   = document.getElementById('bannerProgress');
+
+            if (!track || slides.length === 0) return;
+
+            const TOTAL       = slides.length;
+            const AUTO_DELAY  = 5000; // ms between slides
+            let current       = 0;
+            let autoTimer     = null;
+            let progressTimer = null;
+
+            // Build dots
+            slides.forEach((_, i) => {
+                const d = document.createElement('button');
+                d.className = 'banner-dot' + (i === 0 ? ' active' : '');
+                d.setAttribute('aria-label', 'Slide ' + (i+1));
+                d.addEventListener('click', () => goTo(i));
+                dotsWrap.appendChild(d);
+            });
+
+            function updateCounter() {
+                if (!counter) return;
+                const pad = n => String(n).padStart(2, '0');
+                counter.textContent = pad(current + 1) + ' / ' + pad(TOTAL);
+            }
+
+            function startProgress() {
+                if (!progress) return;
+                progress.style.transition = 'none';
+                progress.style.width = '0%';
+                // Force reflow
+                progress.getBoundingClientRect();
+                progress.style.transition = `width ${AUTO_DELAY}ms linear`;
+                progress.style.width = '100%';
+            }
+
+            function goTo(index) {
+                // Remove active
+                slides[current].classList.remove('active');
+                dotsWrap.querySelectorAll('.banner-dot')[current].classList.remove('active');
+
+                current = (index + TOTAL) % TOTAL;
+
+                // Handle video: if current slide is a real <video> element, play it
+                const videoEl = slides[current].querySelector('video');
+                if (videoEl) {
+                    videoEl.currentTime = 0;
+                    videoEl.play().catch(() => {});
+                }
+
+                slides[current].classList.add('active');
+                dotsWrap.querySelectorAll('.banner-dot')[current].classList.add('active');
+                track.style.transform = `translateX(-${current * 100}%)`;
+                updateCounter();
+                startProgress();
+            }
+
+            function startAuto() {
+                clearInterval(autoTimer);
+                autoTimer = setInterval(() => goTo(current + 1), AUTO_DELAY);
+            }
+
+            prevBtn && prevBtn.addEventListener('click', () => {
+                goTo(current - 1);
+                startAuto(); // reset timer
+            });
+            nextBtn && nextBtn.addEventListener('click', () => {
+                goTo(current + 1);
+                startAuto();
+            });
+
+            // Touch / swipe support
+            let touchStartX = 0;
+            track.addEventListener('touchstart', e => { touchStartX = e.touches[0].clientX; }, { passive: true });
+            track.addEventListener('touchend', e => {
+                const diff = touchStartX - e.changedTouches[0].clientX;
+                if (Math.abs(diff) > 50) {
+                    goTo(diff > 0 ? current + 1 : current - 1);
+                    startAuto();
                 }
             });
-        }
-        
-        // Scroll Progress Bar
-        const progressBar = document.getElementById('scroll-progress-bar');
-        if (progressBar) {
-            window.addEventListener('scroll', () => {
-                const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
-                const progress = (window.pageYOffset / totalHeight) * 100;
-                progressBar.style.width = progress + '%';
-            });
-        }
+
+            // Pause on hover
+            const wrapper = track.closest('.banner-slider-wrapper');
+            if (wrapper) {
+                wrapper.addEventListener('mouseenter', () => clearInterval(autoTimer));
+                wrapper.addEventListener('mouseleave', () => startAuto());
+            }
+
+            // Init
+            goTo(0);
+            startAuto();
+        })();
+
+        // ══════════════════════════════════════════
+        // FADE-UP ON SCROLL
+        // ══════════════════════════════════════════
+        (function() {
+            const fadeEls = document.querySelectorAll('.experience-card, .hobby-card, #about > div, #skills > div, #education > div, #contact > div');
+            fadeEls.forEach(el => el.classList.add('fade-up'));
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(e => {
+                    if (e.isIntersecting) {
+                        e.target.classList.add('visible');
+                        observer.unobserve(e.target);
+                    }
+                });
+            }, { threshold: 0.1 });
+            fadeEls.forEach(el => observer.observe(el));
+        })();
+
     </script>
 </body>
 </html>
