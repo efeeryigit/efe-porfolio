@@ -414,17 +414,33 @@
         body > *:not(#particles-canvas) { position: relative; z-index: 1; }
 
         /* ══════════════════════════════════════════
-           CUSTOM CURSOR GLOW
+           CUSTOM CURSOR GLOW + SPARKLE TRAIL
         ══════════════════════════════════════════ */
         .cursor-glow {
             position: fixed;
-            width: 320px; height: 320px;
+            width: 360px; height: 360px;
             border-radius: 50%;
-            background: radial-gradient(circle, rgba(46,204,113,0.08) 0%, transparent 70%);
+            background: radial-gradient(circle, rgba(46,204,113,0.10) 0%, rgba(46,204,113,0.04) 40%, transparent 70%);
             pointer-events: none;
             z-index: 9999;
             transform: translate(-50%, -50%);
             transition: opacity 0.3s ease;
+        }
+        .cursor-sparkle {
+            position: fixed;
+            width: 6px; height: 6px;
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 9998;
+            transform: translate(-50%, -50%);
+            background: var(--vibrant-emerald);
+            box-shadow: 0 0 6px 2px rgba(46,204,113,0.7), 0 0 12px 4px rgba(46,204,113,0.35);
+            animation: sparkle-fade 0.6s ease-out forwards;
+        }
+        @keyframes sparkle-fade {
+            0%   { opacity: 1;   transform: translate(-50%,-50%) scale(1); }
+            60%  { opacity: 0.5; transform: translate(-50%,-50%) scale(0.6); }
+            100% { opacity: 0;   transform: translate(-50%,-50%) scale(0); }
         }
 
         /* ══════════════════════════════════════════
@@ -658,7 +674,7 @@
         </div>
     </nav>
 
-    <header id="home" class="hero-bg text-primary-light pt-[72px] pb-20 md:pt-[88px] md:pb-32 flex flex-col md:flex-row items-center justify-center text-center md:text-left">
+    <header id="home" class="hero-bg text-primary-light pb-20 md:pb-32 flex flex-col md:flex-row items-center justify-center text-center md:text-left" style="padding-top:64px;">
         <div class="container mx-auto px-6 flex flex-col md:flex-row items-center">
             <div class="md:w-1/3 mb-10 md:mb-0 md:mr-16 flex justify-center hero-animate-img">
                 <div class="profile-ring">
@@ -929,14 +945,40 @@
             <h2 class="text-3xl font-bold mb-12 text-center section-title mx-auto text-primary-light">Skills & Certificates</h2>
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <div class="bg-primary p-6 rounded-lg shadow-custom-accent">
-                    <h3 class="text-xl font-semibold mb-3 text-highlight-accent">Computer Skills</h3>
-                    <ul class="list-disc list-inside text-primary-light space-y-1">
-                        <li>MS Office (Word, Excel, Power Point)</li>
-                        <li>Python (Beginner)</li>
-                        <li>Java (Intermediate)</li>
-                        <li>SQL (Intermediate)</li>
-                        <li>HTML (Beginner)</li>
-                    </ul>
+                    <h3 class="text-xl font-semibold mb-4 text-highlight-accent">Computer Skills</h3>
+
+                    <p class="text-xs font-semibold uppercase tracking-widest text-secondary-medium mb-2">AI &amp; Automation</p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="skill-pill text-xs text-primary-light px-3 py-1 rounded-full">Claude Code</span>
+                        <span class="skill-pill text-xs text-primary-light px-3 py-1 rounded-full">AI Automations (N8N)</span>
+                        <span class="skill-pill text-xs text-primary-light px-3 py-1 rounded-full">Prompt Engineering</span>
+                        <span class="skill-pill text-xs text-primary-light px-3 py-1 rounded-full">ChatGPT / Claude API</span>
+                    </div>
+
+                    <p class="text-xs font-semibold uppercase tracking-widest text-secondary-medium mb-2">Digital Marketing Tools</p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="skill-pill text-xs text-primary-light px-3 py-1 rounded-full">Google Ads</span>
+                        <span class="skill-pill text-xs text-primary-light px-3 py-1 rounded-full">Meta Ads Manager</span>
+                        <span class="skill-pill text-xs text-primary-light px-3 py-1 rounded-full">Google Analytics 4</span>
+                        <span class="skill-pill text-xs text-primary-light px-3 py-1 rounded-full">SEMrush</span>
+                        <span class="skill-pill text-xs text-primary-light px-3 py-1 rounded-full">TikTok/LinkedIn Ads</span>
+                    </div>
+
+                    <p class="text-xs font-semibold uppercase tracking-widest text-secondary-medium mb-2">Development &amp; Data</p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="skill-pill text-xs text-primary-light px-3 py-1 rounded-full">Python</span>
+                        <span class="skill-pill text-xs text-primary-light px-3 py-1 rounded-full">SQL</span>
+                        <span class="skill-pill text-xs text-primary-light px-3 py-1 rounded-full">HTML / CSS</span>
+                        <span class="skill-pill text-xs text-primary-light px-3 py-1 rounded-full">Java</span>
+                    </div>
+
+                    <p class="text-xs font-semibold uppercase tracking-widest text-secondary-medium mb-2">Productivity &amp; Design</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="skill-pill text-xs text-primary-light px-3 py-1 rounded-full">MS Office (Excel, PPT, Word)</span>
+                        <span class="skill-pill text-xs text-primary-light px-3 py-1 rounded-full">Canva</span>
+                        <span class="skill-pill text-xs text-primary-light px-3 py-1 rounded-full">Notion</span>
+                        <span class="skill-pill text-xs text-primary-light px-3 py-1 rounded-full">Figma (Basic)</span>
+                    </div>
                 </div>
                 <div class="bg-primary p-6 rounded-lg shadow-custom-accent">
                     <h3 class="text-xl font-semibold mb-3 text-highlight-accent">Certificates</h3>
@@ -1300,12 +1342,30 @@
         })();
 
         // ══════════════════════════════════════════
-        // CURSOR GLOW
+        // CURSOR GLOW + SPARKLE TRAIL
         // ══════════════════════════════════════════
         (function() {
             var glow = document.getElementById('cursorGlow');
             if (!glow || window.innerWidth < 768) return;
-            document.addEventListener('mousemove', function(e) { glow.style.left=e.clientX+'px'; glow.style.top=e.clientY+'px'; });
+            var lastSparkle = 0, minInterval = 40;
+            document.addEventListener('mousemove', function(e) {
+                glow.style.left = e.clientX + 'px';
+                glow.style.top  = e.clientY + 'px';
+                var now = Date.now();
+                if (now - lastSparkle < minInterval) return;
+                lastSparkle = now;
+                var s = document.createElement('div');
+                s.className = 'cursor-sparkle';
+                var size = (Math.random() * 5 + 3) + 'px';
+                s.style.width  = size;
+                s.style.height = size;
+                var ox = (Math.random() - 0.5) * 14;
+                var oy = (Math.random() - 0.5) * 14;
+                s.style.left = (e.clientX + ox) + 'px';
+                s.style.top  = (e.clientY + oy) + 'px';
+                document.body.appendChild(s);
+                setTimeout(function() { s.remove(); }, 650);
+            });
         })();
 
         // ══════════════════════════════════════════
