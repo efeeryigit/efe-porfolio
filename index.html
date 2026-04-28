@@ -408,13 +408,11 @@
         #particles-canvas {
             position: fixed;
             top: 0; left: 0;
-            top: 0 !important;
             width: 100%; height: 100%;
             pointer-events: none;
             z-index: 0;
             opacity: 0.45;
         }
-        body > *:not(#particles-canvas) { position: relative; z-index: 1; }
 
         /* ══════════════════════════════════════════
            CUSTOM CURSOR GLOW + SPARKLE TRAIL
@@ -425,7 +423,7 @@
             border-radius: 50%;
             background: radial-gradient(circle, rgba(46,204,113,0.10) 0%, rgba(46,204,113,0.04) 40%, transparent 70%);
             pointer-events: none;
-            z-index: 9999;
+            z-index: 999999;
             transform: translate(-50%, -50%);
             transition: opacity 0.3s ease;
         }
@@ -434,7 +432,7 @@
             width: 6px; height: 6px;
             border-radius: 50%;
             pointer-events: none;
-            z-index: 9998;
+            z-index: 999998;
             transform: translate(-50%, -50%);
             background: var(--vibrant-emerald);
             box-shadow: 0 0 6px 2px rgba(46,204,113,0.7), 0 0 12px 4px rgba(46,204,113,0.35);
