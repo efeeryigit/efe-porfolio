@@ -493,10 +493,35 @@
             display: block;
         }
         @media (max-width: 768px) {
+            .banner-slider-wrapper { height: 380px; }
+            .banner-slide { overflow: hidden; }
             .banner-slide img { object-position: center 20%; }
-            .banner-slide-content { padding: 1.5rem 1.25rem !important; }
-            .banner-slide-title { font-size: 1.25rem !important; }
-            .banner-slide-subtitle { font-size: 0.8rem !important; display: none; }
+            .banner-slide-content {
+                padding: 1.25rem 1rem !important;
+                background: linear-gradient(to top, rgba(0,0,0,0.92) 0%, rgba(0,0,0,0.5) 60%, transparent 100%) !important;
+            }
+            .banner-slide-tag { opacity: 1 !important; transform: none !important; font-size: 0.6rem; }
+            .banner-slide-title {
+                font-size: 1.15rem !important;
+                opacity: 1 !important;
+                transform: none !important;
+                margin-bottom: 0.4rem;
+            }
+            .banner-slide-subtitle { display: none !important; }
+            .banner-slide-btn {
+                opacity: 1 !important;
+                transform: none !important;
+                font-size: 0.75rem;
+                padding: 0.45rem 1rem;
+            }
+            /* Override the slide animation on mobile - always show */
+            .banner-slide .banner-slide-tag,
+            .banner-slide .banner-slide-title,
+            .banner-slide .banner-slide-btn {
+                opacity: 1 !important;
+                transform: translateY(0) !important;
+                transition: none !important;
+            }
             .banner-arrow { display: none; }
         }
 
@@ -630,6 +655,14 @@
             #particles-canvas { opacity: 0.2; }
             .cursor-glow { display: none; }
         }
+
+        /* ══════════════════════════════════════════
+           NAV OFFSET — hero starts right below nav
+        ══════════════════════════════════════════ */
+        #home {
+            margin-top: 0;
+            padding-top: 4rem; /* fallback */
+        }
     </style>
 </head>
 <body class="antialiased bg-primary text-primary-light">
@@ -674,7 +707,7 @@
         </div>
     </nav>
 
-    <header id="home" class="hero-bg text-primary-light pb-20 md:pb-32 flex flex-col md:flex-row items-center justify-center text-center md:text-left" style="padding-top:64px;">
+    <header id="home" class="hero-bg text-primary-light pb-20 md:pb-32 flex flex-col md:flex-row items-center justify-center text-center md:text-left">
         <div class="container mx-auto px-6 flex flex-col md:flex-row items-center">
             <div class="md:w-1/3 mb-10 md:mb-0 md:mr-16 flex justify-center hero-animate-img">
                 <div class="profile-ring">
@@ -1366,6 +1399,21 @@
                 document.body.appendChild(s);
                 setTimeout(function() { s.remove(); }, 650);
             });
+        })();
+
+        // ══════════════════════════════════════════
+        // NAV HEIGHT → HERO OFFSET (üst boşluk düzeltme)
+        // ══════════════════════════════════════════
+        (function() {
+            function setHeroOffset() {
+                var nav = document.querySelector('nav');
+                var hero = document.getElementById('home');
+                if (nav && hero) {
+                    hero.style.paddingTop = nav.offsetHeight + 'px';
+                }
+            }
+            setHeroOffset();
+            window.addEventListener('resize', setHeroOffset);
         })();
 
         // ══════════════════════════════════════════
