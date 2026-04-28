@@ -1,0 +1,26 @@
+<svg width="1920" height="520" viewBox="0 0 1920 520" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1920" height="520" fill="#061220"/>
+  <polygon points="800,520 1920,0 1920,520" fill="#0A1E35" opacity="0.8"/>
+  <polygon points="1100,520 1920,100 1920,520" fill="#0E2840" opacity="0.5"/>
+  <line x1="0" y1="100" x2="1920" y2="100" stroke="#378ADD" stroke-width="0.5" opacity="0.08"/>
+  <line x1="0" y1="420" x2="1920" y2="420" stroke="#378ADD" stroke-width="0.5" opacity="0.08"/>
+  <circle cx="118" cy="130" r="9" fill="#1D9E75"/>
+  <circle cx="118" cy="130" r="4" fill="#9FE1CB"/>
+  <rect x="142" y="110" width="215" height="38" rx="4" fill="#0C447C"/>
+  <text x="249" y="135" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="700" fill="#B5D4F4" letter-spacing="3">OPEN TO WORK</text>
+  <text x="110" y="258" font-family="Arial, sans-serif" font-size="82" font-weight="700" fill="#FFFFFF">Available for</text>
+  <text x="110" y="350" font-family="Arial, sans-serif" font-size="82" font-weight="700" fill="#378ADD">Global Opportunities</text>
+  <text x="110" y="410" font-family="Arial, sans-serif" font-size="22" fill="#B5D4F4" opacity="0.85">Digital Marketing · AI-Powered Growth · Performance Campaigns · Istanbul, Turkey</text>
+  <g opacity="0.1" stroke="#378ADD" stroke-width="1" fill="none">
+    <circle cx="1600" cy="260" r="60"/>
+    <circle cx="1600" cy="260" r="110"/>
+    <circle cx="1600" cy="260" r="160"/>
+    <line x1="1540" y1="260" x2="1660" y2="260"/>
+    <line x1="1600" y1="200" x2="1600" y2="320"/>
+    <line x1="1557" y1="217" x2="1643" y2="303"/>
+    <line x1="1557" y1="303" x2="1643" y2="217"/>
+  </g>
+  <circle cx="1600" cy="260" r="7" fill="#378ADD" opacity="0.25"/>
+  <rect x="110" y="445" width="90" height="4" rx="2" fill="#378ADD"/>
+  <text x="215" y="450" font-family="Arial, sans-serif" font-size="16" fill="#85B7EB" opacity="0.7">efeeryigit.com</text>
+</svg>

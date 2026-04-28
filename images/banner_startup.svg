@@ -1,0 +1,39 @@
+<svg width="1920" height="520" viewBox="0 0 1920 520" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1920" height="520" fill="#0E0A02"/>
+  <polygon points="1920,0 1920,520 1200,520 1920,0" fill="#1A1200" opacity="0.8"/>
+  <polygon points="1920,0 1920,260 1600,0" fill="#251A00" opacity="0.5"/>
+  <circle cx="1700" cy="260" r="300" fill="none" stroke="#EF9F27" stroke-width="1" opacity="0.12"/>
+  <circle cx="1700" cy="260" r="180" fill="none" stroke="#EF9F27" stroke-width="0.5" opacity="0.1"/>
+  <rect x="110" y="48" width="210" height="38" rx="5" fill="#633806"/>
+  <text x="215" y="73" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" font-weight="700" fill="#FAC775" letter-spacing="2">ENTREPRENEUR</text>
+  <text x="110" y="168" font-family="Arial, sans-serif" font-size="78" font-weight="700" fill="#FFFFFF">Co-Founder &amp; Business Owner</text>
+  <text x="110" y="228" font-family="Arial, sans-serif" font-size="34" font-weight="600" fill="#EF9F27">3 Ventures · 2 Countries</text>
+  <line x1="110" y1="255" x2="1200" y2="255" stroke="#633806" stroke-width="1" opacity="0.5"/>
+  <!-- Card 1: Viralight -->
+  <rect x="110" y="272" width="300" height="185" rx="8" fill="#1A1200" stroke="#633806" stroke-width="1"/>
+  <text x="135" y="315" font-family="Arial, sans-serif" font-size="24" font-weight="700" fill="#FAC775">Viralight App</text>
+  <text x="135" y="348" font-family="Arial, sans-serif" font-size="18" fill="#EF9F27">AI Influencer Management</text>
+  <text x="135" y="378" font-family="Arial, sans-serif" font-size="15" fill="#FAC775" opacity="0.65">App Store · ASO · Paid Growth</text>
+  <rect x="135" y="398" width="90" height="28" rx="4" fill="#412402"/>
+  <text x="180" y="417" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#FAC775">iOS App</text>
+  <!-- Card 2: Fridge Buddy -->
+  <rect x="435" y="272" width="300" height="185" rx="8" fill="#1A1200" stroke="#633806" stroke-width="1"/>
+  <text x="460" y="315" font-family="Arial, sans-serif" font-size="24" font-weight="700" fill="#FAC775">My Fridge Buddy</text>
+  <text x="460" y="348" font-family="Arial, sans-serif" font-size="18" fill="#EF9F27">AI Food Tracking App</text>
+  <text x="460" y="378" font-family="Arial, sans-serif" font-size="15" fill="#FAC775" opacity="0.65">Photo Recognition · Expiry Alerts</text>
+  <rect x="460" y="398" width="90" height="28" rx="4" fill="#412402"/>
+  <text x="505" y="417" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#FAC775">iOS App</text>
+  <!-- Card 3: ERYISHOP -->
+  <rect x="760" y="272" width="340" height="185" rx="8" fill="#1A1200" stroke="#EF9F27" stroke-width="1.5"/>
+  <text x="785" y="315" font-family="Arial, sans-serif" font-size="24" font-weight="700" fill="#FAC775">ERYISHOP LLC</text>
+  <text x="785" y="348" font-family="Arial, sans-serif" font-size="18" fill="#EF9F27">E-Commerce · Wyoming, USA</text>
+  <text x="785" y="378" font-family="Arial, sans-serif" font-size="15" fill="#FAC775" opacity="0.65">Meta · TikTok · Google Ads · Shopify</text>
+  <rect x="785" y="398" width="115" height="28" rx="4" fill="#412402"/>
+  <text x="842" y="417" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#FAC775">USA LLC</text>
+  <!-- Stars -->
+  <polygon points="1650,100 1656,122 1678,122 1661,135 1667,158 1650,145 1633,158 1639,135 1622,122 1644,122" fill="#FAC775" opacity="0.18"/>
+  <polygon points="1790,180 1795,198 1813,198 1799,208 1804,226 1790,216 1776,226 1781,208 1767,198 1785,198" fill="#FAC775" opacity="0.18"/>
+  <polygon points="1855,60 1859,74 1873,74 1862,83 1866,97 1855,88 1844,97 1848,83 1837,74 1851,74" fill="#FAC775" opacity="0.18"/>
+  <rect x="110" y="480" width="90" height="4" rx="2" fill="#EF9F27"/>
+  <text x="215" y="485" font-family="Arial, sans-serif" font-size="16" fill="#FAC775" opacity="0.7">efeeryigit.com</text>
+</svg>

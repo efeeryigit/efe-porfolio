@@ -1,0 +1,25 @@
+<svg width="1920" height="520" viewBox="0 0 1920 520" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1920" height="520" fill="#0D0D1A"/>
+  <polygon points="0,0 500,0 0,520" fill="#12122A" opacity="0.9"/>
+  <polygon points="0,0 300,0 0,300" fill="#1A1A3A" opacity="0.6"/>
+  <rect x="0" y="0" width="6" height="520" fill="#533AB7"/>
+  <line x1="100" y1="0" x2="100" y2="520" stroke="#3C3489" stroke-width="0.5" opacity="0.3"/>
+  <line x1="0" y1="173" x2="1920" y2="173" stroke="#3C3489" stroke-width="0.5" opacity="0.15"/>
+  <line x1="0" y1="346" x2="1920" y2="346" stroke="#3C3489" stroke-width="0.5" opacity="0.15"/>
+  <line x1="480" y1="0" x2="480" y2="520" stroke="#3C3489" stroke-width="0.5" opacity="0.15"/>
+  <line x1="960" y1="0" x2="960" y2="520" stroke="#3C3489" stroke-width="0.5" opacity="0.15"/>
+  <line x1="1440" y1="0" x2="1440" y2="520" stroke="#3C3489" stroke-width="0.5" opacity="0.15"/>
+  <rect x="120" y="100" width="240" height="38" rx="4" fill="#3C3489"/>
+  <text x="240" y="125" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="700" fill="#CECBF6" letter-spacing="3">DIGITAL MARKETING</text>
+  <text x="120" y="235" font-family="Arial, sans-serif" font-size="82" font-weight="700" fill="#FFFFFF">Performance &amp;</text>
+  <text x="120" y="330" font-family="Arial, sans-serif" font-size="82" font-weight="700" fill="#7F77DD">Growth Strategy</text>
+  <text x="120" y="390" font-family="Arial, sans-serif" font-size="22" fill="#AFA9EC" opacity="0.9">SEO · SEM · Meta &amp; Google Ads · Analytics · Campaign Management</text>
+  <rect x="1500" y="300" width="44" height="160" rx="3" fill="#7F77DD" opacity="0.2"/>
+  <rect x="1560" y="220" width="44" height="240" rx="3" fill="#7F77DD" opacity="0.2"/>
+  <rect x="1620" y="150" width="44" height="310" rx="3" fill="#AFA9EC" opacity="0.2"/>
+  <rect x="1680" y="100" width="44" height="360" rx="3" fill="#CECBF6" opacity="0.2"/>
+  <rect x="1740" y="240" width="44" height="220" rx="3" fill="#7F77DD" opacity="0.2"/>
+  <rect x="1800" y="180" width="44" height="280" rx="3" fill="#AFA9EC" opacity="0.2"/>
+  <rect x="120" y="445" width="90" height="4" rx="2" fill="#7F77DD"/>
+  <text x="225" y="450" font-family="Arial, sans-serif" font-size="16" fill="#AFA9EC" opacity="0.7">efeeryigit.com</text>
+</svg>

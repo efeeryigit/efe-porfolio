@@ -1,0 +1,25 @@
+<svg width="1920" height="520" viewBox="0 0 1920 520" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1920" height="520" fill="#0C1A2E"/>
+  <polygon points="1400,0 1920,0 1920,520 1600,520" fill="#132640" opacity="0.8"/>
+  <polygon points="1550,0 1920,0 1920,300" fill="#1A3352" opacity="0.5"/>
+  <circle cx="1720" cy="80" r="180" fill="none" stroke="#1D9E75" stroke-width="1" opacity="0.3"/>
+  <circle cx="1720" cy="80" r="120" fill="none" stroke="#1D9E75" stroke-width="0.5" opacity="0.2"/>
+  <line x1="0" y1="480" x2="1200" y2="480" stroke="#1D9E75" stroke-width="1" opacity="0.2"/>
+  <rect x="100" y="100" width="175" height="38" rx="4" fill="#0F6E56"/>
+  <text x="187" y="125" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="700" fill="#9FE1CB" letter-spacing="3">LEADERSHIP</text>
+  <text x="100" y="240" font-family="Arial, sans-serif" font-size="82" font-weight="700" fill="#FFFFFF">OzU Business Club</text>
+  <text x="100" y="332" font-family="Arial, sans-serif" font-size="82" font-weight="700" fill="#1D9E75">Presidency</text>
+  <text x="100" y="392" font-family="Arial, sans-serif" font-size="22" fill="#9FE1CB" opacity="0.85">Leading 100+ people across 6 departments · 3,000+ members</text>
+  <g opacity="0.15" fill="#1D9E75">
+    <circle cx="1500" cy="200" r="4"/><circle cx="1540" cy="200" r="4"/><circle cx="1580" cy="200" r="4"/>
+    <circle cx="1620" cy="200" r="4"/><circle cx="1660" cy="200" r="4"/>
+    <circle cx="1500" cy="240" r="4"/><circle cx="1540" cy="240" r="4"/><circle cx="1580" cy="240" r="4"/>
+    <circle cx="1620" cy="240" r="4"/><circle cx="1660" cy="240" r="4"/>
+    <circle cx="1500" cy="280" r="4"/><circle cx="1540" cy="280" r="4"/><circle cx="1580" cy="280" r="4"/>
+    <circle cx="1620" cy="280" r="4"/><circle cx="1660" cy="280" r="4"/>
+    <circle cx="1500" cy="320" r="4"/><circle cx="1540" cy="320" r="4"/><circle cx="1580" cy="320" r="4"/>
+    <circle cx="1620" cy="320" r="4"/><circle cx="1660" cy="320" r="4"/>
+  </g>
+  <rect x="100" y="445" width="90" height="4" rx="2" fill="#1D9E75"/>
+  <text x="205" y="450" font-family="Arial, sans-serif" font-size="16" fill="#5DCAA5" opacity="0.7">efeeryigit.com</text>
+</svg>
