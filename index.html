@@ -217,14 +217,24 @@
         /* Slide content (text + button) */
         .banner-slide-content {
             position: absolute;
-            bottom: 0; left: 0; right: 0;
+            bottom: 0; right: 0;
+            width: 52%;
             z-index: 3;
             padding: 3rem 4rem;
-            background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 100%);
+            background: linear-gradient(to left, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.5) 75%, transparent 100%);
+            text-align: left;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
         }
 
         @media (max-width: 768px) {
-            .banner-slide-content { padding: 2rem 1.5rem; }
+            .banner-slide-content {
+                width: 100%;
+                right: 0; left: 0;
+                padding: 2rem 1.5rem;
+                background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, transparent 100%);
+            }
         }
 
         .banner-slide-tag {
@@ -662,7 +672,7 @@
         ══════════════════════════════════════════ */
         #home {
             margin-top: 0 !important;
-            padding-top: 64px !important;
+            padding-top: 90px !important;
         }
     </style>
 </head>
@@ -761,6 +771,9 @@
         </div>
     </header>
 
+    <!-- Küçük boşluk: header ile banner arası -->
+    <div style="height:8px; background-color:var(--charcoal-black);"></div>
+
     <!-- ══════════════════════════════════════
          BANNER SLIDER — Fotoğraf & Video
     ══════════════════════════════════════ -->
@@ -774,52 +787,62 @@
         <div class="banner-slider-wrapper">
             <div class="banner-track" id="bannerTrack">
 
-                <!-- ── SLIDE 1 — Digital Marketing ── -->
+                <!-- ── SLIDE 1 — Fotoğraf ── -->
                 <div class="banner-slide active" data-type="image">
-                    <img src="images/banner_digital_marketing.svg" alt="Performance & Growth Strategy">
+                    <!-- Kendi fotoğrafınızı buraya koyun: src="images/banner1.jpg" -->
+                    <img src="images/efe_eryigit_business.jpg" alt="OzU Business Club">
+                    <div class="banner-slide-overlay"></div>
+                    <div class="banner-slide-content">
+                        <div class="banner-slide-tag">Leadership</div>
+                        <h2 class="banner-slide-title">OzU Business Club<br>Presidency</h2>
+                        <p class="banner-slide-subtitle">Leading 100+ people across 6 departments, serving 3000 members.</p>
+                        <a href="#experience" class="banner-slide-btn">
+                            View Experience <i class="fas fa-arrow-right text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- ── SLIDE 2 — Fotoğraf ── -->
+                <div class="banner-slide" data-type="image">
+                    <img src="images/efe_eryigit_marketing_week.jpg" alt="Marketing Week">
+                    <div class="banner-slide-overlay"></div>
                     <div class="banner-slide-content">
                         <div class="banner-slide-tag">Digital Marketing</div>
-                        <h2 class="banner-slide-title">Performance &amp;<br>Growth Strategy</h2>
-                        <p class="banner-slide-subtitle">SEO · SEM · Meta &amp; Google Ads · Analytics · Campaign Management</p>
+                        <h2 class="banner-slide-title"> Digital Marketing &amp;<br>Growth Strategy</h2>
+                        <p class="banner-slide-subtitle">SEO, campaign management and performance analytics.</p>
                         <a href="#skills" class="banner-slide-btn">
                             See My Skills <i class="fas fa-arrow-right text-xs"></i>
                         </a>
                     </div>
                 </div>
 
-                <!-- ── SLIDE 2 — Co-Founder / Startup ── -->
-                <div class="banner-slide" data-type="image">
-                    <img src="images/banner_startup.svg" alt="Co-Founder & Entrepreneur">
+                <!-- ── SLIDE 3 — Video (src kısmını kendi videonuzla değiştirin) ── -->
+                <div class="banner-slide" data-type="video">
+                    <!-- Video için: src="videos/banner_video.mp4" -->
+                    <!-- Şimdilik fotoğraf ile placeholder: kendi videonuzu ekleyin -->
+                   <video autoplay muted loop playsinline>
+    <source src="videos/banner_video.mp4" type="video/mp4">
+</video>
+                    <div class="video-badge">VIDEO</div>
+                    <div class="banner-slide-overlay"></div>
                     <div class="banner-slide-content">
-                        <div class="banner-slide-tag">Entrepreneur</div>
-                        <h2 class="banner-slide-title">Co-Founder &amp;<br>Business Owner</h2>
-                        <p class="banner-slide-subtitle">Viralight App · My Fridge Buddy · ERYISHOP LLC (Wyoming, USA)</p>
-                        <a href="#experience" class="banner-slide-btn">
-                            View Experience <i class="fas fa-arrow-right text-xs"></i>
+                        <div class="banner-slide-tag">Startup</div>
+                        <h2 class="banner-slide-title">Co-Founder,<br>Viralight App</h2>
+                        <p class="banner-slide-subtitle">AI-powered influencer management platform on the App Store.</p>
+                        <a href="https://apps.apple.com/tr/app/viralight-influencer-koçu/id6741738225?l=tr" target="_blank" class="banner-slide-btn">
+                            View on App Store <i class="fas fa-external-link-alt text-xs"></i>
                         </a>
                     </div>
                 </div>
 
-                <!-- ── SLIDE 3 — OzU Business Club ── -->
+                <!-- ── SLIDE 4 — Fotoğraf ── -->
                 <div class="banner-slide" data-type="image">
-                    <img src="images/banner_leadership.svg" alt="OzU Business Club Presidency">
-                    <div class="banner-slide-content">
-                        <div class="banner-slide-tag">Leadership</div>
-                        <h2 class="banner-slide-title">OzU Business Club<br>Presidency</h2>
-                        <p class="banner-slide-subtitle">Leading 100+ people across 6 departments · 3,000+ members</p>
-                        <a href="#experience" class="banner-slide-btn">
-                            View Experience <i class="fas fa-arrow-right text-xs"></i>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- ── SLIDE 4 — Open to Opportunities ── -->
-                <div class="banner-slide" data-type="image">
-                    <img src="images/banner_opentowork.svg" alt="Open to Global Opportunities">
+                    <img src="images/efe_eryigit_linkedin_foto.jpg" alt="Efe Eryigit">
+                    <div class="banner-slide-overlay"></div>
                     <div class="banner-slide-content">
                         <div class="banner-slide-tag">Available for Work</div>
-                        <h2 class="banner-slide-title">Open to Global<br>Opportunities</h2>
-                        <p class="banner-slide-subtitle">Digital Marketing · AI-Powered Growth · Performance Campaigns · Istanbul, Turkey</p>
+                        <h2 class="banner-slide-title">Open to<br>Opportunities</h2>
+                        <p class="banner-slide-subtitle">Digital marketing, growth strategies and AI powered automations and coding.</p>
                         <a href="#contact" class="banner-slide-btn">
                             Get in Touch <i class="fas fa-arrow-right text-xs"></i>
                         </a>
@@ -1022,7 +1045,7 @@
                         <span class="skill-pill text-xs text-primary-light px-3 py-1 rounded-full">Turkish — Native</span>
                     </div>
                 </div>
-                
+                        <li>Spanish (Beginner)</li>
                     </ul>
                 </div>
             </div>
